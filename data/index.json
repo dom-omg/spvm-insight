@@ -1,0 +1,52 @@
+{
+  "2024": {
+    "pages": 55,
+    "tables": 74,
+    "text_size": 108692
+  },
+  "2023": {
+    "pages": 52,
+    "tables": 78,
+    "text_size": 104493
+  },
+  "2022": {
+    "pages": 52,
+    "tables": 73,
+    "text_size": 103459
+  },
+  "2021": {
+    "pages": 46,
+    "tables": 69,
+    "text_size": 78112
+  },
+  "2020": {
+    "pages": 27,
+    "tables": 54,
+    "text_size": 45500
+  },
+  "2019": {
+    "pages": 20,
+    "tables": 48,
+    "text_size": 32819
+  },
+  "2018": {
+    "pages": 20,
+    "tables": 48,
+    "text_size": 31231
+  },
+  "2017": {
+    "pages": 21,
+    "tables": 49,
+    "text_size": 31626
+  },
+  "2016": {
+    "pages": 21,
+    "tables": 49,
+    "text_size": 31594
+  },
+  "2015": {
+    "pages": 21,
+    "tables": 50,
+    "text_size": 31955
+  }
+}

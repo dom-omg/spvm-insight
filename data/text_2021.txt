@@ -1,0 +1,1777 @@
+
+--- PAGE 1 ---
+RAPPORT
+d’activités
+SERVICE DE POLICE DE LA VILLE DE MONTRÉAL
+2021
+
+--- PAGE 2 ---
+RAPPORT
+D’ACTIVITÉS
+2021
+Ce rapport d’activités annuel constitue un survol
+des activités policières du Service de police de la
+Ville de Montréal (SPVM). Sauf indication contraire, les
+données présentées sont en date du 31 décembre 2021.
+Ce document est rédigé de façon inclusive,
+à l’exception des tableaux dans le but de les alléger
+et d’en faciliter la lecture.
+Collaborations et remerciements
+Ce rapport est une production de la Direction
+des communications, des pratiques d’affaires
+et des relations avec les partenaires du SPVM.
+Conception
+Comité du rapport d’activités, composé de la
+Division de l’intelligence d’affaires et de la Division
+des communications
+Remerciements
+Le comité tient à remercier le personnel de toutes
+les unités du SPVM qui ont contribué à la collecte
+de données et à la transmission des informations
+pour la production de ce rapport d’activités annuel.
+Dépôt légal – Bibliothèque et Archives nationales
+du Québec, 2022
+ISBN 978-2-922389-63-0
+Navigation interactive
+1. Dans la table des matières, cliquez sur
+le contenu que vous souhaitez consulter.
+2. Cliquez aussi sur les hyperliens pour accéder
+à des contenus supplémentaires en ligne.
+3. Pour revenir à la table des matières en cours
+de lecture, cliquez sur l’icône apparaissant
+au bas de chacune des pages.
+
+--- PAGE 3 ---
+Rapport d’activités 2021 SERVICE DE POLICE DE LA VILLE DE MONTRÉAL
+T able des
+matières
+2 Mot du responsable de la sécurité publique de la Ville de Montréal
+3 Mot du directeur du Service de police de la Ville de Montréal
+4 Mission du SPVM
+5 Portrait de l’année 2021
+5 Statistiques démographiques
+9 Notre environnement et la population montréalaise
+10 La COVID-19, pour une deuxième année
+11 Demandes d’intervention
+13 Infractions au Code criminel
+22 Le SPVM à l’écoute de son environnement
+26 Statistiques opérationnelles
+29 Sécurité routière et règlements de la circulation
+32 Statistiques administratives
+33 Loi sur la police
+36 Le don d’organes et le personnel du SPVM
+37 Annexe : Tableaux détaillés sur la criminalité
+Table des 1
+matières
+
+--- PAGE 4 ---
+Rapport d’activités 2021 SERVICE DE POLICE DE LA VILLE DE MONTRÉAL
+Mot du responsable
+de la sécurité publique
+de la Ville de Montréal
+À titre de responsable de la sécurité publique au sein
+du comité exécutif de la Ville de Montréal, je tiens
+à souligner l’exemplarité des services offerts aux
+Montréalaises et aux Montréalais par le Service
+de police de la Ville de Montréal (SPVM).
+D’année en année, les policières et les policiers, de
+même que le personnel civil du SPVM, accomplissent
+un travail qui se révèle de plus en plus complexe
+et exigeant. L’année 2021 n’aura pas fait exception.
+Je les remercie, toutes et tous, pour leur engagement à
+maintenir le caractère sécuritaire de notre ville, tout au
+long d’une année marquée à la fois par la persistance de
+la pandémie et par une augmentation des violences par
+armes à feu. Je tiens donc à les féliciter pour le travail
+exceptionnel qu’ils accomplissent au quotidien, pour
+toujours mieux servir et protéger les Montréalaises
+et les Montréalais.
+En 2021, le SPVM a vaillamment poursuivi ses efforts
+pour contrer le phénomène de la violence par armes
+à feu. Il a su faire preuve d’agilité en réorganisant sa La mobilisation de l’ensemble des partenaires
+structure de travail pour combattre la problématique et des acteurs-clés en matière de sécurité publique
+et rétablir le sentiment de sécurité de la population. est cruciale.
+La lutte s’est ainsi intensifiée dans une approche La police est une partie intégrante de la solution.
+globale avec le déploiement, en 2021, de la Stratégie
+intégrée en violence par armes à feu à Montréal, laquelle
+vise à réunir les partenaires internes et impliquer les
+partenaires externes. Alain Vaillancourt
+RESPONSABLE DE LA SÉCURITÉ PUBLIQUE
+Je félicite le SPVM pour ses efforts et sa capacité DE LA VILLE DE MONTRÉAL
+à travailler avec les partenaires du milieu, dont ceux
+du milieu communautaire, pour renforcer le lien
+de confiance avec la population.
+Maintenir le caractère sécuritaire de la métropole
+est la priorité de toutes et de tous.
+Table des 2
+matières
+
+--- PAGE 5 ---
+Rapport d’activités 2021 SERVICE DE POLICE DE LA VILLE DE MONTRÉAL
+Mot du directeur
+du Service de police
+de la Ville de Montréal
+De plus, nos échanges avec la Ville de Montréal et
+le ministère de la Sécurité publique (MSP) se seront
+conclus par l’obtention de plusieurs ressources, autant
+humaines que matérielles, afin de mettre sur pied les
+projets essentiels à l’action concertée et collaborative
+dans cette lutte à la violence armée.
+Je souhaite finalement vous exprimer combien cela a
+été pour moi un honneur et un véritable privilège d’être
+directeur du SPVM. J’ai eu la chance de découvrir une
+organisation avec une solide expertise ainsi que des
+policier.ère.s et des employé.e.s civil.e.s que je respecte
+profondément pour leur résilience et leur courage.
+À tout le personnel, vous avez toute mon admiration !
+Merci de continuer à « tenir le fort » et à vous investir
+autant pour les citoyennes et les citoyens.
+Bonne continuation !
+C’est le moment où j’ai le privilège de partager
+avec vous les activités et les résultats de nos actions
+au cours de l’année 2021.
+D’emblée, et pour une deuxième année consécutive, la
+Sylvain Caron
+pandémie nous a imposé sa sombre réalité. Jamais de ma
+DIRECTEUR DU SERVICE DE POLICE DE LA VILLE DE MONTRÉAL
+carrière policière je n’aurais imaginé cette situation où le
+DE 2018 À 2021
+personnel, en toute première ligne des appels à l’aide, aura
+lui aussi été au nombre des personnes atteintes. Malgré
+tout, c’est l’ensemble de la prestation de services attendue
+de nous qui a été offerte à la population avec au total, un Bienvenue à
+million d’appels auxquels nous avons répondu : présents ! Sophie Roy,
+directrice intérimaire
+À l’instar d’autres grandes villes canadiennes, Montréal a
+du SPVM
+malheureusement fait face à la violence par armes à feu,
+encore cette année. Bien que les chiffres révèlent qu’elle Au moment de finaliser ce
+est parmi les villes les plus sécuritaires, cela ne peut rapport d’activités annuel, nous
+empêcher notre fort sentiment d’indignation collectif accueillons notre toute première
+devant cette violence et le décès d’innocentes victimes. directrice, madame Sophie
+Roy, qui assume actuellement
+Cet enjeu de sécurité publique, qui dépasse l’intérim à cette haute fonction et succède au directeur
+l’entendement et nos frontières, a bien sûr déclenché Sylvain Caron. Toute l’organisation tient à lui offrir ses
+une série de mesures et d’actions avec la création plus sincères félicitations, son soutien et ses meilleurs
+de nouvelles équipes sur le terrain, dont les équipes vœux de succès.
+multidisciplinaires dédiées aux armes à feu (EMAF).
+Table des 3
+matières
+
+--- PAGE 6 ---
+Rapport d’activités 2021 SERVICE DE POLICE DE LA VILLE DE MONTRÉAL
+Mission
+du SPVM
+Le Service de police de la Ville de Montréal (SPVM) répond aux
+appels et aux besoins des citoyennes et des citoyens, 7 jours
+sur 7, 24 heures sur 24. Premier répondant auprès de la collectivité
+montréalaise, le SPVM est le deuxième service de police municipal
+en importance au Canada et le huitième en Amérique du Nord.
+Notre mission, en étroite collaboration
+avec nos partenaires
+• Protéger la vie et les biens des citoyennes et des citoyens ;
+• Maintenir la paix et la sécurité publique ;
+• Prévenir et combattre le crime ;
+• Faire respecter les lois et les règlements en vigueur.
+Table des 4
+matières
+
+--- PAGE 7 ---
+Rapport d’activités 2021 SERVICE DE POLICE DE LA VILLE DE MONTRÉAL
+Portrait de
+l’année 2021
+STATISTIQUES DÉMOGRAPHIQUES
+Près de 6 000 policier.ère.s et employé.e.s civil.e.s travaillent ensemble et collaborent avec de nombreux
+partenaires locaux, provinciaux et internationaux pour répondre aux besoins des Montréalaises et des Montréalais
+en matière de sécurité publique.
+EFFECTIF TOTAL AUTORISÉ ET RÉEL
+TOTAL
+6 313 TOTAL
+5 817
+7 000
+6 000
+1 4131
+1 2942
+5 000
+POLICIER CIVIL
+4 000
+TOTAL
+3 000
+496
+2 000
+377 119
+1 000
+4 900 4 523
+0
+Autorisé Réel Postes vacants
+Afin de compenser la perte de prestation découlant de diverses absences du personnel policier, le SPVM a recours
+à des constables auxiliaires permanents. Il s’agit de policier.ère.s assujetti.e.s à une période de probation d’un an à
+compter de leur date d’embauche. En 2021, le SPVM comptait 215 constables auxiliaires permanents dans son effectif
+réel, mais ce nombre varie annuellement et peut atteindre un maximum de 300. Les 377 postes policiers vacants
+incluent ces 85 postes de constables auxiliaires permanents non comblés.
+————
+1 Incluant les postes à statut permanent et temporaire.
+2 Certaines fonctions du SPVM bénéficient de banques d’employés surnuméraires. À titre d’exemple, une banque de brigadiers scolaires surnuméraires
+(sur appel) est disponible afin d’assurer le remplacement des brigadiers scolaires permanents en cas de besoin. Ce faisant, au 31 décembre 2021,
+le SPVM pouvait compter sur 1 465 personnes disponibles à l’emploi pour les 1 294 postes civils comblés.
+Table des 5
+matières
+
+--- PAGE 8 ---
+Rapport d’activités 2021 SERVICE DE POLICE DE LA VILLE DE MONTRÉAL
+EMBAUCHE DE PERSONNEL POLICIER SELON
+LE SEXE ET L’APPARTENANCE ETHNOCULTURELLE
+1 2
+ Autochtones
+5 12  Minorités ethniques
+6  Minorités visibles
+ Autres groupes
+33
+Embauche 2021
+TOTAL TOTAL
+81 141 222
+69 94
+Campagne d’attraction
+de la diversité du SPVM
+L’invitation « Deviens agent de changement en œuvrant comme policier.ère au SPVM »
+a été lancée pendant la Semaine de la police, en mai 2021, aux jeunes Montréalaises et
+Montréalais de 15 à 25 ans issus de la diversité dans le cadre de notre vaste campagne
+de recrutement.
+NOTRE OBJECTIF :
+ACCROÎTRE LA PRÉSENCE DE CES JEUNES
+POUR REFLÉTER DAVANTAGE LA RÉALITÉ
+DE NOTRE MÉTROPOLE MULTICULTURELLE.
+Pour donner un visage humain à cette campagne numérique, des policier.ère.s
+de différentes origines ont accepté de raconter leur histoire et leur parcours au SPVM.
+Leurs témoignages touchants et franchement unanimes confirment que « faire sa place »
+et « faire LA différence » est possible chez nous. C’est donc vraisemblablement
+ce qui attend celles et ceux qui ont choisi ou choisiront, à leur tour, de faire partie
+de la grande équipe du SPVM.
+En 2021, nos employé.e.s dédié.e.s au recrutement ont organisé ou participé à près
+de 50 événements pour rejoindre les jeunes de la diversité et leur présenter nos quelque
+150 possibilités de fonction.
+Pour connaître la campagne de recrutement 2021 ou postuler,
+rendez-vous à recrutementspvm.ca.
+Table des 6
+matières
+
+--- PAGE 9 ---
+Rapport d’activités 2021 SERVICE DE POLICE DE LA VILLE DE MONTRÉAL
+REPRÉSENTATIVITÉ DE L’EFFECTIF POLICIER SELON
+LE SEXE ET L’APPARTENANCE ETHNOCULTURELLE
+16 64 21 153
+71
+ Autochtones
+ Minorités ethniques
+324
+ Minorités visibles
+ Autres groupes
+Total
+TOTAL TOTAL
+1 568 2 955 4 523
+1 417 2 457
+REPRÉSENTATIVITÉ DE L’EFFECTIF CIVIL SELON
+LE SEXE ET L’APPARTENANCE ETHNOCULTURELLE
+6 2
+ Autochtones
+54 44
+ Minorités ethniques
+138  Minorités visibles
+80
+ Autres groupes
+Total
+TOTAL TOTAL
+931 534 1 465
+733 408
+Définitions
+Autochtones : Membres des Premières Nations, Métis ou Inuits.
+Minorités ethniques : Personnes dont la langue maternelle n’est ni le français ni l’anglais.
+Minorités visibles : Personnes qui ne sont pas de couleur blanche.
+Source : Programme d’accès à l’égalité en emploi de la Ville de Montréal
+Table des 7
+matières
+
+--- PAGE 10 ---
+Rapport d’activités 2021 SERVICE DE POLICE DE LA VILLE DE MONTRÉAL
+RÉPARTITION DE L’EFFECTIF CIVIL RÉPARTITION DE L’EFFECTIF
+SELON LA CATÉGORIE D’EMPLOI POLICIER PAR GROUPE D’ÂGE
+Catégorie d’emploi Nombre Groupe d’âge Nombre
+Col blanc 578 18-24 ans 139
+Col bleu 25 25-29 ans 676
+Brigadier scolaire 543 30-34 ans 656
+Professionnel 92 35-39 ans 643
+Cadre 55 40-44 ans 805
+TOTAL 1 294 45-49 ans 863
+50-54 ans 573
+55-59 ans 146
+RÉPARTITION DE L’EFFECTIF 60 ans et plus 22
+POLICIER SELON LE GRADE TOTAL 4 523
+Grade Nombre
+Agent 3 243
+RÉPARTITION DE L’EFFECTIF
+Sergent 358
+POLICIER SELON LE NOMBRE
+Sergent-détective 651
+D’ANNÉES DE SERVICE
+Lieutenant 46
+Lieutenant-détective 90 Années de service Nombre
+Commandant 76 0 à 4 ans 817
+Inspecteur 30 5 à 9 ans 659
+Inspecteur-chef 13 10 à 14 ans 562
+Directeur adjoint 5 15 à 19 ans 812
+Directeur 1 20 à 24 ans 1 115
+TOTAL 4 523 25 à 29 ans 479
+30 à 34 ans 65
+35 ans et plus 14
+TOTAL 4 523
+NIVEAU DE SCOLARITÉ LE PLUS ÉLEVÉ
+COMPLÉTÉ - EFFECTIF POLICIER
+Niveau de scolarité Nombre
+Diplôme de l’École nationale de police 3 039
+du Québec (ou équivalent)
+Retraites, démissions,
+Programme court universitaire 314
+radiations et décès
+Certificat ou mineure 714
+207
+Majeure 11
+Baccalauréat 377
+Maîtrise ou D.E.S.S. 67
+Doctorat 1 Pour 222 embauches
+TOTAL 4 523
+Table des 8
+matières
+
+--- PAGE 11 ---
+Rapport d’activités 2021 SERVICE DE POLICE DE LA VILLE DE MONTRÉAL
+NOTRE ENVIRONNEMENT ET
+LA POPULATION MONTRÉALAISE
+PORTRAIT DE MONTRÉAL
+Superficie du territoire3 Les festivités et 1er rang
+496 km2 les manifestations
+en Amérique du Nord
+façonnent l’environnement
+pour l’ouverture à la
+culture LGBTQ2+4
+1er rang Meilleure ville
+étudiante
+des villes les plus
+sécuritaires des Amériques6
+pour les voyageurs5
+POPULATION7
+Plus de 34 % Près de
+2 des personnes 6
+millions appartiennent à des Montréalais.e.s
+de Montréalais.e.s minorités visibles 10
+sur issu.e.s
+de l’immigration
+7 % 3 150
+Quelque
+de la population autochtone personnes en situation
+du Québec, soit 13 000 personnes d’itinérance visible8
+————
+3 Source : Profil sociodémographique de Montréal en statistiques du Service du développement économique de la Ville de Montréal, mai 2018.
+4 Source : Palmarès international du site WorkMotion, 2021.
+5 Source : Berkshire Hathaway Travel Protection, compilation des villes les plus sécuritaires pour voyager, 2022.
+6 Source : Classement QS Best Student Cities pour les étudiants étrangers, 2022.
+7 Source pour les quatre premières données : Recensement de la population de Statistique Canada, 2016.
+8 Source : Dénombrement des personnes en situation d’itinérance sur l’île de Montréal, 24 avril 2018. Ce nombre aurait grandement augmenté
+avec la pandémie.
+Table des 9
+matières
+
+--- PAGE 12 ---
+Rapport d’activités 2021 SERVICE DE POLICE DE LA VILLE DE MONTRÉAL
+LA COVID-19, POUR
+UNE DEUXIÈME ANNÉE
+La COVID-19, qui s’est imposée dans nos vies et partout La pandémie de la COVID-19 a aussi eu des impacts
+dans le monde, a amené en 2021 le maintien de l’état sur les principaux indicateurs de la criminalité. Pour
+d’urgence et des consignes sanitaires décrétées par une deuxième année, les gens ont été massivement
+le gouvernement. Nos policières et nos policiers ont confinés à leur résidence, plusieurs établissements
+poursuivi leur travail sur le terrain dans le but d’informer, commerciaux ont dû fermer pendant une certaine
+de sensibiliser et d’assurer le respect des règles. Entre période, un couvre-feu a été en vigueur pendant
+le 1er janvier et le 31 décembre, le personnel du 911 a les cinq premiers mois de l’année 2021 (du 9 janvier
+répondu à 15 569 appels en lien avec la crise sanitaire au 28 mai 2021) et le télétravail a été rendu obligatoire
+et plus de 15 800 rapports d’infraction généraux ou pour ceux dont la fonction le permet. Il s’agit là de
+constats d’infraction ont dû être remis conformément quelques pistes d’explications permettant, du moins en
+à la Loi sur la santé publique. partie, de mettre en contexte les statistiques présentées
+dans ce rapport d’activités annuel.
+La cinquième vague de la pandémie a lourdement frappé
+l’ensemble du Québec. Bien qu’affectée par la maladie
+et vulnérable aux répercussions dans le quotidien, notre
+équipe a su, avec résilience et ténacité, offrir la qualité
+de service que chaque personne est en droit de recevoir
+de notre organisation.
+Table des 10
+matières
+
+--- PAGE 13 ---
+Rapport d’activités 2021 SERVICE DE POLICE DE LA VILLE DE MONTRÉAL
+DEMANDES D’INTERVENTION
+NOMBRE D’APPELS REÇUS À LA CENTRALE 911 –
+TEMPS DE RÉPONSE ET DE TRAITEMENT
+Variation
+2020 2021 2020/2021
+Nombre total des appels au 911 1 386 443 1 382 225 -
+Nombre d’appels au 514 280-2222 (appels non urgents) 50 406 62 857 +
+NOMBRE TOTAL D’APPELS TRAITÉS PAR LA CENTRALE 911 1 436 849 1 445 082 +
+Temps de réponse (secondes) 2 3 +
+Temps de traitement (secondes) 142 140 -
+En 2021, le personnel de la Centrale 911 a répondu à 1 445 082 appels nécessitant la présence d’un service d’urgence
+(service de police, service de sécurité incendie, service ambulancier). De ce nombre, un peu plus de 425 000 appels
+(30 %) nécessitaient l’intervention du SPVM et ont été répartis aux policier.ère.s pour une prise en charge. Cette
+statistique demeure relativement stable d’une année à l’autre.
+NOMBRE D’APPELS RÉPARTIS PAR RÉGION SELON LEUR PRIORITÉ
+Code de Région Région Région Région Section Total par
+priorité Ouest Sud Nord Est Métro priorité
+1 2 400 2 029 2 273 2 288 108 9 098
+2 44 277 40 682 45 613 41 816 3 055 175 443
+3 41 734 35 564 45 742 34 893 3 831 161 764
+4 13 720 16 879 30 115 13 812 7 74 533
+5 768 751 839 731 11 3 100
+6 27 32 28 25 1 113
+7 232 273 256 181 8 950
+P9 0 0 3 1 0 4
+TOTAL 103 158 96 210 124 869 93 747 7 021 425 005
+TEMPS MOYEN DE RÉPONSE10 AUX APPELS DE PRIORITÉ 1
+Variation
+2020 2021 2020/2021
+Temps moyen de réponse (minutes) 5,49 6,05 +
+————
+9 Appel au 911 pour assistance immédiate à un membre du personnel policier.
+10 Délai calculé entre le moment où l’appel est inscrit à la Centrale 911 et le moment où le personnel policier est présent sur les lieux.
+Table des 11
+matières
+
+--- PAGE 14 ---
+Rapport d’activités 2021 SERVICE DE POLICE DE LA VILLE DE MONTRÉAL
+STATISTIQUES DU SYSTÈME ADMINISTRATIF DE GESTION DES ALARMES
+Variation
+2020 2021 2020/2021
+NOMBRE TOTAL D’ALARMES FONDÉES 877 808 -
+Cambriolages 769 683 -
+Vols qualifiés 108 125 +
+NOMBRE TOTAL D’ALARMES NON FONDÉES 19 347 18 541 -
+Cambriolages 18 184 17 354 -
+Vols qualifiés 1 163 1 187 +
+MONTANT PERÇU EN AMENDES POUR ALARMES NON FONDÉES ($) 1 379 259 1 704 262 +
+RAPPORTS DE POLICE EN LIGNE
+Variation
+Nombre de demandes reçues via Internet 2020 2021 2020/2021
+MÉFAITS 1 313 1 241 -
+Méfaits par graffitis 268 267 -
+Méfaits sur véhicule 853 783 -
+Autres méfaits 192 191 -
+OBJETS PERDUS 1 986 1 999 +
+VOLS 6 102 6 399 +
+Vols dans ou sur un véhicule 2 644 2 819 +
+Vols de bicyclette 1 055 1 061 +
+Autres vols 2 403 2 519 +
+INCIDENTS À CARACTÈRE HAINEUX 21 26 +
+DEMANDES REJETÉES OU REDIRIGÉES POUR TRAITEMENT 2 993 2 949 -
+ADÉQUAT
+SIGNALEMENTS DE NON-RESPECT DES CONSIGNES SANITAIRES 4 727 3 317 -
+LIÉES À L’APPLICATION DE LA LOI SUR LA SANTÉ PUBLIQUE
+TOTAL 17 142 15 931 -
+En 2021, le SPVM a reçu un total de 15 931 demandes de rédaction de rapport de police en ligne. De ce nombre,
+3 317 signalements de rassemblements ont été traités par la Centrale 911 et 2 949 demandes ont été rejetées
+ou redirigées vers les policier.ère.s, pour un traitement adéquat. Des 9 665 demandes de rédaction de rapport
+respectant les critères des rapports en ligne, 8 461 rapports d’événement ont été rédigés.
+Signaler une situation en ligne
+Si vous êtes victime d’un méfait, d’un vol ou de vandalisme ou encore, si vous souhaitez rapporter
+un objet perdu, vous pouvez remplir vous-même un rapport de police en ligne sans avoir à vous
+déplacer dans un poste de quartier (PDQ).
+Si l’incident dont vous êtes victime comporte des éléments d’enquête, c’est-à-dire
+la présence d’un suspect, d’un témoin, des éléments de preuve ou si l’événement
+a une connotation haineuse, vous devez composer le 911.
+Table des 12
+matières
+
+--- PAGE 15 ---
+Rapport d’activités 2021 SERVICE DE POLICE DE LA VILLE DE MONTRÉAL
+INFRACTIONS AU CODE CRIMINEL
+Les tableaux suivants présentent les statistiques sur la criminalité pour l’année 2021, mais aussi celles des cinq
+années précédentes. Ce type de présentation permet de comparer les données d’une année à un ensemble plus vaste,
+d’amorcer les perspectives des tendances et, dans un contexte tel que celui que nous vivons avec la pandémie qui
+sévit toujours, de constater plus aisément certaines particularités statistiques.
+VARIATION DE LA CRIMINALITÉ
+Variation
+2021 /
+Variation moyenne
+Infractions 2016 2017 2018 2019 2020 2021 2020/2021 5 ans
+Crimes contre 19 650 20 217 20 593 23 692 22 984 25 129 + 17,3 %
+la personne
+Crimes contre 54 561 53 796 50 705 51 642 45 477 46 400 + -9,4 %
+la propriété
+Autres infractions 8 281 8 417 8 729 8 875 7 404 7 218 - -13,5 %
+au Code criminel
+TOTAL DES 82 492 82 430 80 027 84 209 75 865 78 747 + -2,8 %
+INFRACTIONS AU
+CODE CRIMINEL
+Autres lois et 18 234 21 201 18 709 14 669 11 977 16 173 + -4,6 %
+règlements
+TOTAL GLOBAL 100 726 103 631 98 736 98 878 87 842 94 920 + -3,1 %
+Source : M-IRIS, en date du 20 février 2022.
+Le bilan général des infractions au Code criminel a globalement connu une baisse de 2,8 %. Plus spécifiquement, les
+crimes contre la propriété et les autres infractions au Code criminel ont diminué respectivement de 9,4 % et de 13,5 %
+par rapport à la moyenne des cinq dernières années, alors que les crimes contre la personne ont augmenté de 17,3 %.
+Table des 13
+matières
+
+--- PAGE 16 ---
+Rapport d’activités 2021 SERVICE DE POLICE DE LA VILLE DE MONTRÉAL
+CRIMES CONTRE LA PERSONNE
+Variation
+2021 /
+Variation moyenne
+Infractions 2016 2017 2018 2019 2020 2021 2020/2021 5 ans
+Homicides 23 24 32 25 25 36 + 39,5 %
+Autres infractions 1 2 1 1 2 1 - -28,6 %
+entraînant la mort
+Tentatives de 99 89 106 122 131 139 + 27,1 %
+meurtre
+Voies de fait 10 439 10 421 10 918 13 275 12 970 14 233 + 22,6 %
+Agressions sexuelles 1 487 1 828 1 879 1 957 1 797 2 365 + 32,2 %
+Vols qualifiés 2 687 2 511 2 252 2 387 1 983 2 102 + -14,5 %
+Autres infractions 4 919 5 342 5 405 5 925 6 076 6 253 + 13,0 %
+contre la personne
+TOTAL 19 650 20 217 20 593 23 692 22 984 25 129 + 17,3 %
+Source : M-IRIS, en date du 20 février 2022.
+Partout au Canada, une tendance à la hausse des différents crimes contre la personne est remarquée, et ce,
+depuis plusieurs années déjà. À Montréal, en 2021, ceux-ci ont augmenté de 17,3 % par rapport à la moyenne
+de 2016 à 2020. Les homicides et les tentatives de meurtre ont augmenté de façon importante et la problématique
+de la violence armée contribue très certainement à ce portrait. En effet, la moitié des homicides et des tentatives
+de meurtre commis sur le territoire du SPVM en 2021 impliquait la présence ou l’utilisation d’une arme à feu
+(voir tableau Armes à feu). La problématique de la violence armée demeure au centre des préoccupations du SPVM.
+Les mesures sanitaires ont vraisemblablement eu des effets sur les victimes de crimes contre la personne quant
+à leur capacité à demander de l’aide, à avoir accès à des services et à la possibilité de détection ou de dénonciation
+de situations par un tiers. Ainsi, après une légère diminution en 2020, le nombre de voies de fait a repris sa tendance
+à la hausse en 2021. Cette augmentation est principalement due aux voies de fait simples et aux voies de fait armées
+ou infligeant des blessures.
+Le nombre de dossiers d’agressions sexuelles a augmenté de 32,2 % par rapport à la moyenne des cinq
+dernières années. La médiatisation de cas portés devant les tribunaux, le dépôt de rapports de commissions,
+dont Rebâtir la confiance11, et une plus grande sensibilisation générale de la population ont certainement contribué
+à une augmentation des dénonciations auprès de la police.
+————
+11 Source : Rapport du comité d’experts sur l’accompagnement des victimes d’agressions sexuelles et de violence conjugale, décembre 2020.
+Table des 14
+matières
+
+--- PAGE 17 ---
+Rapport d’activités 2021 SERVICE DE POLICE DE LA VILLE DE MONTRÉAL
+La violence conjugale
+Au Québec, 26 femmes ont été assassinées en 2021, dont la grande majorité dans un contexte conjugal.
+À Montréal, ce sont cinq femmes qui sont décédées dans un contexte de violence conjugale ou intrafamiliale,
+ce qui constitue 13,5 % des homicides.
+Les effets de la pandémie de la COVID-19 sur la violence subie par les victimes sont indiscutables et
+l’urgence d’agir demeure une priorité. C’est pourquoi le SPVM a bonifié son offre de service en déployant la
+Section spécialisée en violence conjugale (SSVC), grâce au financement d’un peu plus de 5 M$ sur cinq ans,
+obtenu des ministères de la Sécurité publique et de la Justice. Cette section permet de consolider la
+structure ainsi que la communauté de pratique en violence conjugale et intrafamiliale (VCI), au sein desquelles
+un.e agent.e sociocommunautaire VCI ou un.e lieutenant.e-détective agit déjà à titre de personne-ressource
+dans chaque PDQ ou centre d’enquête.
+De plus, la SSVC permet maintenant :
+• de privilégier un accompagnement plus personnalisé des victimes de violence conjugale lors du dépôt
+de la plainte et tout au long du processus judiciaire ;
+• de resserrer le suivi et la surveillance des individus agresseurs à la suite de leur libération afin de vérifier
+qu’ils respectent les conditions émises par la cour ;
+• d’optimiser le référencement des individus agresseurs vers les ressources d’aide appropriées.
+Table des 15
+matières
+
+--- PAGE 18 ---
+Rapport d’activités 2021 SERVICE DE POLICE DE LA VILLE DE MONTRÉAL
+CRIMES CONTRE LA PROPRIÉTÉ
+Variation
+2021 /
+Variation moyenne
+Infractions 2016 2017 2018 2019 2020 2021 2020/2021 5 ans
+Crimes d’incendie 360 406 353 370 386 383 - 2,1 %
+Introductions par 9 766 9 168 7 415 6 994 6 067 5 072 - -35,7 %
+effraction
+Vols de véhicules à 4 411 4 816 4 345 4 321 4 789 6 527 + 43,9 %
+moteur
+Vols simples 25 645 24 864 24 298 23 879 18 806 19 473 + -17,1 %
+Possession de biens 486 460 474 502 506 530 + 9,1 %
+volés
+Fraudes 6 544 6 802 7 401 9 417 9 048 8 618 - 9,9 %
+Méfaits 7 349 7 280 6 419 6 159 5 875 5 797 - -12,4 %
+TOTAL 54 561 53 796 50 705 51 642 45 477 46 400 + -9,4 %
+Source : M-IRIS, en date du 20 février 2022.
+Poursuivant une tendance à la baisse constatée depuis Les vols de véhicules à moteur présentent une
+quelques années déjà, les crimes contre la propriété ont augmentation importante en 2021 par rapport
+diminué en 2021. Cette baisse est principalement due à à la moyenne des cinq dernières années. Cette
+la diminution des introductions par effraction, des vols problématique préoccupe les corps policiers du Québec
+simples et des méfaits. Plus spécifiquement, le nombre et du Canada puisqu’une tendance à la hausse semble
+d’introductions par effraction a diminué de 35,7 % en s’installer depuis quelques années. Les avancées
+2021 comparativement à la moyenne des cinq dernières technologiques, le raffinement des outils utilisés
+années. Bien qu’une baisse de ce type d’infractions soit ainsi que la rareté des véhicules et des pièces en raison
+observée depuis quelques années, la pandémie semble de la pandémie expliquent, en partie, cette hausse
+avoir accéléré la tendance à cet effet. Il en va de même importante. Le SPVM agit tant en prévention auprès
+pour les vols simples et les méfaits qui présentent des automobilistes qu’en collaboration avec ses
+respectivement une diminution de 17,1 % et de 12,4 % partenaires municipaux, provinciaux et fédéraux
+comparativement à la moyenne des cinq dernières afin de lutter contre cette problématique.
+années. La présence des citoyen.ne.s à leur domicile
+en raison des consignes sanitaires, des périodes de Les fraudes ont diminué par rapport aux deux dernières
+couvre-feu ainsi que le télétravail obligatoire sont autant années. Cette catégorie d’infractions présente tout de
+d’hypothèses permettant d’expliquer ces variations. même une augmentation de près de 10 % par rapport
+à la moyenne des cinq dernières années. Elle est due,
+en partie, à un plus grand nombre de fraudes à l’identité
+et par carte de service (par exemple, par carte bancaire).
+Table des 16
+matières
+
+--- PAGE 19 ---
+Rapport d’activités 2021 SERVICE DE POLICE DE LA VILLE DE MONTRÉAL
+AUTRES INFRACTIONS AU CODE CRIMINEL
+Variation
+2021 /
+Variation moyenne
+Infractions 2016 2017 2018 2019 2020 2021 2020/2021 5 ans
+Infractions relatives 513 501 436 344 251 376 + -8,1 %
+aux armes à feu12
+Infractions contre 6 724 6 991 7 046 7 335 5 820 5 553 - -18,1 %
+l’administration de
+la loi et de la justice
+Autres infractions 958 925 1 247 1 196 1 333 1 289 - 13,9 %
+TOTAL 8 281 8 417 8 729 8 875 7 404 7 218 - -13,5 %
+Source : M-IRIS, en date du 20 février 2022.
+AUTRES LOIS ET RÈGLEMENTS
+Variation
+2021 /
+Variation moyenne
+Infractions 2016 2017 2018 2019 2020 2021 2020/2021 5 ans
+Loi sur les aliments 2 840 3 164 2 726 2 083 1 844 1 683 - -33,5 %
+et drogues
+Infractions aux 126 207 226 189 191 557 + 196,6 %
+lois fédérales
+Infractions aux 712 820 424 438 2 081 6 500 + 626,3 %
+lois provinciales
+Règlements 14 556 17 010 15 333 11 959 7 861 7 433 - -44,3 %
+municipaux
+TOTAL 18 234 21 201 18 709 14 669 11 977 16 173 + -4,6 %
+Source : M-IRIS, en date du 20 février 2022.
+Une hausse importante des infractions aux lois fédérales et aux lois provinciales est constatée. Cette augmentation
+est due à l’application des décrets de la Loi sur la santé publique ainsi que de la Loi sur la mise en quarantaine de
+laquelle ont découlé l’émission de constats d’infraction et la rédaction de rapports d’infraction généraux. Depuis le
+début de la pandémie, les règles imposées par la Santé publique ont notamment eu pour effet de créer de nouvelles
+infractions passibles de sanctions (distanciation minimale entre les individus, port du masque, rassemblements
+interdits, fermetures de commerces non essentiels, déplacements grandement réduits).
+————
+12 Infractions relatives aux armes à feu qui ne réfèrent pas à un crime contre la personne.
+Table des 17
+matières
+
+--- PAGE 20 ---
+Rapport d’activités 2021 SERVICE DE POLICE DE LA VILLE DE MONTRÉAL
+CLASSEMENT DES AFFAIRES CRIMINELLES13
+2020 2021
+Mineurs Mineurs
+Adultes Adultes
+MEA14 MEA SMA15 MEA MEA SMA
+CRIMES CONTRE LA PERSONNE
+Homicides 23 0 0 23 2 0
+Autres infractions entraînant la mort 1 0 0 1 0 0
+Tentatives de meurtre 50 3 0 63 12 0
+Voies de fait 5 302 208 52 5 541 257 30
+Agressions sexuelles 319 40 3 389 33 1
+Vols qualifiés 660 161 6 709 188 9
+Autres infractions contre la personne 2 458 128 19 2 356 109 13
+TOTAL PARTIEL 8 813 540 80 9 082 601 53
+CRIMES CONTRE LA PROPRIÉTÉ
+Crimes d’incendie 36 1 0 34 3 4
+Introductions par effraction 1 005 19 21 790 30 13
+Vols de véhicules à moteur 251 24 0 305 4 11
+Vols simples 2 413 69 108 2 552 32 102
+Possession de biens volés 347 19 3 344 22 3
+Fraudes 557 24 5 373 10 5
+Méfaits 653 35 14 574 46 24
+TOTAL PARTIEL 5 262 191 151 4 972 147 162
+AUTRES INFRACTIONS AU CODE CRIMINEL
+Infractions relatives aux armes à feu 180 13 5 206 27 2
+Infractions contre l’administration de la loi et de la justice 4 685 177 9 4 494 154 14
+Autres infractions 404 6 10 292 8 3
+TOTAL PARTIEL 5 269 196 24 4 992 189 19
+TOTAL DES INFRACTIONS AU CODE CRIMINEL 19 344 927 255 19 046 937 234
+AUTRES LOIS ET RÈGLEMENTS
+Loi sur les aliments et drogues 1 617 46 10 1 496 54 5
+Infractions aux lois fédérales 175 4 1 528 6 0
+Infractions aux lois provinciales 5 320 167 8 14 649 355 7
+Règlements municipaux 8 285 282 0 7 798 329 0
+TOTAL PARTIEL 15 397 499 19 24 471 744 12
+TOTAL GLOBAL 34 741 1 426 274 43 517 1 681 246
+Source : M-IRIS, en date du 20 février 2022.
+————
+13 Les statistiques présentées dans ce tableau concernent le nombre d’affaires criminelles classées en 2020 et 2021. Considérant la nature complexe des enquêtes,
+il est possible qu’il s’agisse de dossiers ouverts antérieurement. Il n’est donc pas possible de présenter un taux de classement pour une année donnée.
+14 MEA : affaires classées avec mise en accusation.
+15 Affaires classées sans mise en accusation où le suspect est d’âge mineur. Les statuts des événements compris dans cette catégorie sont principalement les cas
+de déjudiciarisation où il y a eu retrait de la plainte ou application d’une mesure extrajudiciaire en vertu de la Loi sur le système de justice pénale pour adolescents
+(pouvoir discrétionnaire, avertissement ou renvoi en justice alternative).
+Table des 18
+matières
+
+--- PAGE 21 ---
+Rapport d’activités 2021 SERVICE DE POLICE DE LA VILLE DE MONTRÉAL
+Lutte collective contre
+la violence armée
+Montréal a fait face à une augmentation de la
+violence armée sur ton territoire. Préserver la vie
+et assurer la sécurité ainsi que la quiétude de la
+population dans son milieu de vie est au cœur de
+la mission du SPVM et de son engagement dans
+la lutte contre la violence armée.
+Cet enjeu de criminalité s’étend à l’extérieur des
+frontières du territoire montréalais. Sa récurrence
+met en évidence l’importance de faire front commun
+avec les gouvernements, nos collègues des autres
+corps policiers, les citoyennes et les citoyens, de
+même qu’avec nos partenaires communautaires.
+C’est effectivement en partageant la responsabilité
+que l’on peut agir dans l’intérêt de la collectivité
+et gagner la lutte : ensemble.
+Dans cette vision rassembleuse, la direction du
+SPVM a fait appel en 2021 à toutes les instances
+et ressources possibles pour se donner les moyens
+de s’adapter à cette difficile réalité.
+ARMES À FEU
+Variation
+2020 2021 2020/2021
+NOMBRE DE CRIMES CONTRE LA PERSONNE LORS DESQUELS 437 516 +
+UNE ARME À FEU ÉTAIT PRÉSENTE16
+Homicides 5 (6)17 17 (19) +
+Tentatives de meurtre 57 (78) 52 (71) -
+Décharges d’armes à feu 71 144 +
+NOMBRE D’ARMES À FEU RÉCUPÉRÉES 1 065 959 -
+Armes saisies18 744 628 -
+Armes remises volontairement19 321 331 +
+Source : M-IRIS, en date du 23 mars 2022.
+————
+16 Il s’agit des crimes contre la personne (tout type confondu) où il y a mention, présence ou utilisation d’une arme à feu.
+17 Nombre d’événements (nombre de victimes).
+18 La section « Armes saisies » comprend les catégories suivantes : utilisée comme arme, saisie avec mandat, saisie sans mandat, saisie préventive, preuve, retrouvée,
+trouvée et abandonnée.
+19 La section « Armes remises volontairement » comprend les catégories suivantes : amnistie, remise volontaire/désistement et remise par un citoyen.
+Table des 19
+matières
+
+--- PAGE 22 ---
+Rapport d’activités 2021 SERVICE DE POLICE DE LA VILLE DE MONTRÉAL
+Les crimes contre la personne impliquant la présence
+ou l’utilisation d’une arme à feu ont augmenté de
+15,3 % en 2021. Les homicides impliquant la présence
+ou l’utilisation d’une arme à feu ainsi que les événements
+de décharges d’armes à feu présentent une hausse
+importante. Les tentatives de meurtre impliquant la
+Les médias sociaux jouent un rôle
+présence ou l’utilisation d’une arme à feu ont, quant
+de plus en plus important dans
+à elles, diminué.
+les enquêtes en matière d’armes à feu.
+68 %
+En 2021, il y a eu une augmentation de
+La hausse des événements de décharges d’armes à feu
+des dossiers de ce type traités par notre
+peut être liée à une croissance importante des appels de
+Module cyberenquête.
+service concernant les coups de feu. En effet, le volume
+d’appels des citoyennes et des citoyens à ce sujet a
+augmenté de 30 % entre 2020 et 2021. Au-delà d’une
+augmentation réelle des incidents de ce type, on peut
+penser que la population est également plus encline
+à communiquer avec le SPVM lorsqu’elle entend des
+coups de feu, grâce au travail de rapprochement que
+poursuivent les équipes du SPVM sur le terrain.
+Les équipes d’enquête des quatre sections régionales,
+des stupéfiants et des crimes majeurs ainsi que les
+patrouilleuses et les patrouilleurs et le personnel civil
+détenant une expertise particulière ou occupant une
+fonction névralgique contribuent également à la lutte
+contre la violence armée. Maintenir le sentiment
+de quiétude à Montréal mobilise et rallie l’ensemble
+du personnel !
+Table des 20
+matières
+
+--- PAGE 23 ---
+Rapport d’activités 2021 SERVICE DE POLICE DE LA VILLE DE MONTRÉAL
+QUELQUES ACTIONS
+2JANV0IER 21
+CONCERTÉES POUR
+CONTRER LA
+VIOLENCE ARMÉE FÉVRIER
+Création de l’Équipe de lutte au trafic
+d’armes à feu (ELTA)
+Cette équipe, dont le rôle est complémentaire
+à celui des autres unités du SPVM, vise
+ultimement à arrêter les têtes dirigeantes
+MARS
+des réseaux et à s’attaquer au marché
+du trafic d’armes.
+AVRIL
+Création des équipes multisectorielles
+dédiées aux armes à feu (EMAF)
+Les équipes multisectorielles dédiées aux armes
+à feu, communément appelées EMAF, ont été créées
+afin d’offrir à la population montréalaise une mesure
+MAI
+supplémentaire dans la lutte contre la violence armée.
+Leur objectif est de traiter les dossiers de crimes
+impliquant des armes à feu (décharges d’armes à feu,
+tentatives de meurtre et possession d’armes à feu).
+JUIN
+JUILLET
+Soutien additionnel de 5,8 M$
+Ce financement, obtenu de la Ville de Montréal,
+Déploiement de la Stratégie intégrée
+a renforcé la capacité d’action des équipes
+en violence armée à Montréal
+dédiées à la lutte contre la violence armée.
+Cette stratégie a permis de réunir les équipes AOÛT
+du SPVM et les partenaires externes dans la
+lutte contre la violence armée pour ainsi veiller Création de l’Équipe intégrée de lutte
+à maintenir le sentiment de sécurité. au trafic d’armes à feu (EILTA)
+L’EILTA est née de la fusion de l’Équipe de
+SEPTEMBRE lutte au trafic d’armes (ELTA) et d’une section
+d’enquêteurs de la Sûreté du Québec (SQ)
+Lancement de l’opération CENTAURE spécialisés dans la lutte aux armes à feu.
+Le SPVM contribue de près, en tant
+Créée par le MSP, l’équipe a pour mandat
+que partenaire, à l’opération CENTAURE
+d’enquêter sur les activités d’approvisionnement,
+(Coordination des Efforts Nationaux sur OCTOBRE
+d’importation et de distribution d’armes
+le Trafic d’Armes, Unis dans la Répression
+à feu. Cette coordination favorise, entre
+et les Enquêtes), lancée par le ministère
+autres, une plus grande fluidité du partage
+de la Sécurité publique (MSP).
+du renseignement criminel entre les différents
+corps policiers.
+NOVEMBRE
+DÉCEMBRE
+Table des 21
+matières
+
+--- PAGE 24 ---
+Rapport d’activités 2021 SERVICE DE POLICE DE LA VILLE DE MONTRÉAL
+LE SPVM À L’ÉCOUTE DE SON ENVIRONNEMENT
+Depuis quelques années, le SPVM met en place plusieurs équipes mixtes spécialisées qui sillonnent les rues
+et multiplient les alliances avec des partenaires afin d’agir ensemble en amont de la criminalité, de façon concertée
+et complémentaire.
+L’ECCR : une nouvelle équipe
+mobile entièrement dégagée
+de la réponse aux appels
+L’année 2021 aura été marquée par l’arrivée de l’Équipe
+de concertation communautaire et de rapprochement
+(ECCR). Cette équipe est entièrement dégagée de la
+réponse aux appels et dédiée à la prise en compte des
+préoccupations de la communauté. Son mandat : aller à
+la rencontre de la population et des intervenant.e.s des
+organismes communautaires en vue de trouver avec eux
+des solutions durables aux enjeux de sécurité urbaine
+et de cohabitation sociale, actuels ou émergents.
+Le rapprochement s’opère par l’identification de haltes
+de concertation communautaire, de lieux propices à
+des échanges formels ou informels dans un quartier.
+En patrouille à pied ou hybride, les policier.ère.s de
+l’ECCR vont à la rencontre des gens là où ils se trouvent,
+dans des refuges, des parcs, des résidences pour
+personnes aînées, des stations de métro ou des centres
+commerciaux, entre autres.
+C’est aussi l’occasion pour les policier.ère.s de
+développer une meilleure connaissance des diverses
+communautés ethnoculturelles, de se familiariser
+avec le tissu social et de mieux comprendre les réalités
+vécues dans les quartiers. La création et le renforcement
+des liens de confiance sont la clé pour pouvoir agir
+en amont et désamorcer des situations tendues. Les
+citoyen.ne.s peuvent à leur tour mieux comprendre le
+travail des policier.ère.s, leur rôle, leurs responsabilités
+ainsi que les opportunités et les limites de leurs
+interventions.
+Depuis avril 2021, l’ECCR est déployée dans les zones du
+centre-ville et du Nord-Est. Au printemps 2022, l’équipe
+servira une autre zone distincte du territoire montréalais,
+soit la région ouest de l’Île.
+Table des 22
+matières
+
+--- PAGE 25 ---
+Rapport d’activités 2021 SERVICE DE POLICE DE LA VILLE DE MONTRÉAL
+Bonification des pratiques
+• Le SPVM a pris acte du rapport de l’enquête
+de l’honorable juge Louis Dionne à laquelle
+il a pleinement collaboré. Des changements
+L’EMIC et son accompagnement aux
+sont et seront apportés dans le but de
+personnes en situation d’itinérance poursuivre l’amélioration des pratiques,
+notamment dans le domaine des enquêtes.
+L’Équipe métro d’intervention et de concertation (EMIC)
+• Afin d’échanger sur les notions de racisme
+patrouille l’ensemble du réseau de métro afin d’offrir
+systémique et de discrimination,
+un accompagnement aux personnes en situation
+14 rencontres ont été tenues et animées
+d’itinérance et de les guider vers les bonnes ressources.
+par Frédéric Boisrond, sociologue et
+consultant indépendant au SPVM, avec
+Composée d’un intervenant social de la Société de
+près de 200 officier.ère.s de direction,
+développement social, d’un policier du SPVM et d’un
+gestionnaires civil.e.s et superviseur.e.s.
+inspecteur de la STM, l’équipe s’est illustrée en 2021,
+à plusieurs égards : • Nous poursuivons nos travaux en lien
+avec les interpellations policières :
+• Prix d’excellence Intersection 2021, Réseau
+Intersection, MSP ; • Nouvelle politique en vigueur depuis
+mars 2021 ;
+• Finaliste au prix d’excellence 2021 de l’Institut
+d’administration publique du Québec (IAPQ) ; • Déploiement d’une équipe de coachs
+dans le but d’assurer une compréhension
+• Prix Sûreté et sécurité 2021 de l’Association
+commune ;
+canadienne des transports urbains (ACTU) 2021.
+• Attribution d’un deuxième mandat
+Des honneurs qui témoignent bien de la pertinence à une équipe de chercheur.euse.s
+de constituer des équipes multidisciplinaires ! indépendant.e.s afin de se pencher sur
+l’explication des disparités identifiées
+lors des travaux précédents.
+Table des 23
+matières
+
+--- PAGE 26 ---
+Rapport d’activités 2021 SERVICE DE POLICE DE LA VILLE DE MONTRÉAL
+Un Module des incidents et des crimes haineux novateur et unique
+La création du Module des incidents et des crimes haineux (MICH) provient d’une volonté, à la fois du SPVM et
+de la Ville de Montréal, de se doter d’une unité spécialisée traitant exclusivement les incidents et les crimes haineux,
+sur l’ensemble du territoire montréalais, et ce, depuis 2016. Au-delà des enquêtes menées à cet égard, le MICH,
+qui est la première équipe du genre au Québec, s’investit en matière de sensibilisation et de prévention.
+Dans le contexte actuel où une pandémie sévit et des conflits internationaux éclatent, les répercussions peuvent se
+faire sentir jusqu’à Montréal. C’est pourquoi le MICH demeure à l’affût afin de détecter rapidement tout événement
+pouvant découler de ces situations. L’équipe va ainsi à la rencontre des acteurs influents des diverses communautés
+de Montréal pour prendre le pouls du sentiment de sécurité de celles-ci. Le MICH leur offre son soutien, des séances
+d’information et des moyens de prévention.
+CRIMES ET INCIDENTS HAINEUX
+Variation
+Nature des événements 2020 2021 2020/2021
+NOMBRE DE CRIMES HAINEUX CONCERNANT 246 194 -
+L’origine ethnique, l’origine nationale ou la couleur de peau 133 100 -
+La langue 2 0 -
+La religion 70 69 -
+Le sexe 7 4 -
+L’âge 0 0 =
+L’incapacité mentale ou physique 0 0 =
+L’orientation sexuelle, l’identité ou l’expression de genre 19 18 -
+Autres facteurs semblables (politique, idéologique) 15 3 -
+NOMBRE D’INCIDENTS HAINEUX CONCERNANT 115 104 -
+L’origine ethnique, l’origine nationale ou la couleur de peau 60 51 -
+La langue 0 1 +
+La religion 32 40 +
+Le sexe 10 3 -
+L’âge 0 1 +
+L’incapacité mentale ou physique 0 0 =
+L’orientation sexuelle, l’identité ou l’expression de genre 4 7 +
+Autres facteurs semblables (politique, idéologique) 9 1 -
+Un total de 71 529 crimes contre la personne et contre la propriété ont été rapportés au SPVM en 2021 (Voir tableau
+Variation de la criminalité). De ces crimes, près de 200 comportaient un caractère haineux. Par ailleurs, 104 incidents
+déclarés au SPVM comportaient un caractère haineux. Le faible nombre de dossiers rend toute analyse statistique hasardeuse.
+Ce faible nombre de dossiers est malheureusement peu étonnant puisqu’il est possible que des personnes victimes
+ou témoins de crimes ou d’incidents haineux n’osent pas les dénoncer à la police. La dénonciation de ces crimes ou
+incidents, nonobstant leur gravité, ainsi que la vigilance sont des pratiques à encourager.
+Si vous êtes victime ou témoin d’un crime ou d’un incident à caractère haineux, des ressources existent
+pour vous accompagner. Pour signaler :
+• un crime haineux, composez le 911 ou présentez-vous à un PDQ.
+• un incident haineux, vous pouvez également vous présenter à un PDQ ou remplir un rapport de police en ligne.
+Table des 24
+matières
+
+--- PAGE 27 ---
+Rapport d’activités 2021 SERVICE DE POLICE DE LA VILLE DE MONTRÉAL
+Définitions
+Crime haineux :
+• Il s’agit d’une infraction CRIMINELLE.
+• En vertu de la Déclaration uniforme de la criminalité, un crime est considéré
+comme haineux lorsqu’il est motivé ou soupçonné d’être motivé par la haine
+de l’origine nationale ou ethnique, la langue, la couleur de peau, la religion,
+le sexe, l’âge, l’incapacité mentale ou physique, l’orientation sexuelle,
+l’identité ou l’expression de genre ou tout autre facteur similaire.
+Incident à caractère haineux :
+• Il s’agit d’un acte NON CRIMINEL.
+• Cet acte pourrait affecter le sentiment de sécurité d’une personne ou d’un groupe
+identifiable de personnes qui, compte tenu du contexte, peut être perçu comme tel,
+en raison de l’origine nationale ou ethnique, la langue, la couleur de peau, la religion,
+le sexe, l’âge, l’incapacité mentale ou physique, l’orientation sexuelle, l’identité ou
+l’expression de genre ou tout autre facteur similaire.
+Table des 25
+matières
+
+--- PAGE 28 ---
+Rapport d’activités 2021 SERVICE DE POLICE DE LA VILLE DE MONTRÉAL
+STATISTIQUES OPÉRATIONNELLES
+Le SPVM fait annuellement plus d’un million d’interventions, qu’elles soient en réponse à un appel d’urgence au 911
+ou initiées par les policières et les policiers. De plus, le SPVM est présent et assure la sécurité des citoyennes et des
+citoyens lors des nombreux événements publics qui se déroulent sur le territoire montréalais (près de 2 000 services
+d’ordre en 2021). Les policières et les policiers disposent d’un ensemble d’outils qu’ils peuvent utiliser, au besoin,
+lors d’interventions individuelles ou en gestion de foule. Ces outils sont spécifiques à chaque situation et diffèrent
+selon la nature de l’intervention.
+UTILISATION DES ARMES INTERMÉDIAIRES PAR L’EFFECTIF POLICIER
+Variation
+2020 2021 2020/2021
+AÉROSOL CAPSIQUE 277 289 +
+BÂTON TÉLESCOPIQUE 79 63 -
+ARME À IMPULSION ÉLECTRIQUE 351 465 +
+Démonstration 296 397 +
+Projection 52 65 +
+Contact 3 3 =
+ARME INTERMÉDIAIRE D’IMPACT À PROJECTILES 23 46 +
+IRRITANT CHIMIQUE
+Nombre d’événements 7 24 +
+Nombre d’utilisations 56 191 +
+Après une année 2020 difficilement comparable, le
+nombre d’utilisations d’armes intermédiaires par les
+Approche du SPVM
+policières et les policiers en 2021 présente un retour à
+pour l’utilisation des
+des niveaux similaires aux années antérieures. À titre
+d’exemple, le nombre d’utilisations d’aérosol capsique armes intermédiaires
+a augmenté en 2021, mais présente une diminution par
+rapport aux années antérieures. L’utilisation de l’arme à Le SPVM privilégie la communication, la
+impulsion électrique a légèrement augmenté par rapport médiation et l’encadrement sécuritaire dans
+aux années antérieures. La hausse est principalement toutes les situations où il intervient, qu’il
+due au mode « démonstration » (présentation de l’arme s’agisse d’une intervention individuelle ou
+sans qu’elle ne soit mise en contact avec l’individu visé). en gestion de foule. Si le SPVM fait usage
+de la force, il le fait en fonction de cadres
+L’utilisation d’irritants chimiques a été en hausse établis et de normes d’utilisation, dont celles
+en 2021 par rapport à 2020. Le confinement lié à la provinciales et de l’enseignement de l’École
+COVID-19 a eu un impact sur le cadre et les types de nationale de police du Québec (ENPQ).
+rassemblements. L’année 2021 a été marquée par des
+rassemblements, notamment liés à des manifestations, L’objectif principal recherché lors de
+à divers événements internationaux, aux séries la gestion des manifestations ou des
+éliminatoires de la Coupe Stanley et à la Fête nationale rassemblements populaires demeure
+du Québec. Plus de 80 % des utilisations d’irritants d’assurer et de respecter le libre droit
+chimiques découlent de ces événements. Leur utilisation de s’exprimer de la population sans
+est déterminée selon le contexte et en réaction à une compromettre la sécurité publique
+foule au comportement actif, agressif ou violent. Par ou d’endommager les biens publics
+ailleurs, le nombre moyen d’utilisations par événement ou privés.
+est stable à travers les années.
+Table des 26
+matières
+
+--- PAGE 29 ---
+Rapport d’activités 2021 SERVICE DE POLICE DE LA VILLE DE MONTRÉAL
+UTILISATION DE L’ARME À FEU PAR L’EFFECTIF POLICIER
+Variation
+2020 2021 2020/2021
+NOMBRE D’ÉVÉNEMENTS20 5 1 -
+Personnes blessées 3 0 -
+Personnes décédées 2 1 -
+COMPILATION DU NOMBRE DE SERVICES D’ORDRE
+Variation
+2020 2021 2020/2021
+Manifestations 549 520 -
+Autres services d’ordre 1 064 1 306 +
+TOTAL DES SERVICES D’ORDRE 1 613 1 826 +
+Définitions des services d’ordre
+La tenue d’un événement d’envergure ou d’une manifestation
+implique le déploiement d’une opération policière lors de laquelle
+doit être maintenu le juste équilibre entre le respect des droits et
+des libertés individuels de notre société démocratique et la paix
+et l’ordre dans les espaces urbains.
+Les services d’ordre sont classés en trois grandes catégories :
+• Service d’ordre local : Il s’agit d’événements locaux, par
+exemple, des fêtes de quartier, des petits rassemblements, etc.,
+qui peuvent être encadrés à même les effectifs d’un PDQ.
+• Service d’ordre local avec un apport corporatif : Ce sont des
+événements qui peuvent être gérés localement, mais avec
+l’assistance d’unités de PDQ supplémentaires ou d’unités telles
+que les groupes de support et des interventions spécialisées,
+de la circulation ou des vélos.
+• Service d’ordre corporatif : Ce sont des événements de grande
+envergure, tels que les feux d’artifice, le Grand Prix et les
+manifestations qui nécessitent la planification et la gestion
+des services d’ordre par une unité corporative, soit le Service
+de la planification opérationnelle. Ces événements sont alors
+coordonnés en collaboration avec plusieurs unités du SPVM
+et des partenaires depuis le Centre de commandement
+et de traitement de l’information.
+————
+20 Lorsqu’un citoyen ou un suspect est blessé pendant une intervention policière, le dossier fait l’objet d’une enquête par le Bureau des enquêtes indépendantes.
+Table des 27
+matières
+
+--- PAGE 30 ---
+Rapport d’activités 2021 SERVICE DE POLICE DE LA VILLE DE MONTRÉAL
+Présence policière lors des séries
+éliminatoires de la Ligue nationale
+de hockey – Go Habs Go !
+Le déploiement et la mise en œuvre de
+22 services d’ordre corporatifs durant les séries
+de la Coupe Stanley ont permis d’assurer la
+sécurité et le maintien de la quiétude pour
+l’ensemble des citoyen.ne.s, des commerçant.e.s
+et des partisan.e.s qui se sont rassemblé.e.s,
+le cœur à la fête, à différents endroits
+sur le territoire pour l’occasion.
+En 2021, l’encadrement des services d’ordre liés
+aux séries éliminatoires représente plus de 45 %
+de la facture totale des coûts de l’ensemble
+des manifestations publiques.
+POURSUITES POLICIÈRES DE VÉHICULES
+Variation
+2020 2021 2020/2021
+NOMBRE DE POURSUITES POLICIÈRES 26 22 -
+NOMBRE DE DÉCÈS LIÉS À UNE POURSUITE POLICIÈRE 0 0 =
+NOMBRE DE BLESSÉS LIÉS À UNE POURSUITE POLICIÈRE 3 1 -
+Suspects 1 0 -
+Policiers 2 1 -
+Citoyens 0 0 =
+NOMBRE TOTAL D’ACCIDENTS LIÉS À UNE POURSUITE POLICIÈRE 13 6 -
+NOMBRE TOTAL D’ACCIDENTS IMPLIQUANT UN VÉHICULE DU SPVM 4 3 -
+NOMBRE TOTAL D’ACCIDENTS IMPLIQUANT UN VÉHICULE 13 3 -
+DE SUSPECT
+NOMBRE TOTAL D’ACCIDENTS IMPLIQUANT UN VÉHICULE 7 0 -
+DE CITOYEN OU UN PIÉTON
+Table des 28
+matières
+
+--- PAGE 31 ---
+Rapport d’activités 2021 SERVICE DE POLICE DE LA VILLE DE MONTRÉAL
+SÉCURITÉ ROUTIÈRE ET
+RÈGLEMENTS DE LA CIRCULATION
+Les effets de la pandémie sur la circulation routière ont été directs
+et immédiats :
+• Baisse du flot de véhicules ;
+• Hausse de la vitesse des automobilistes dans les rues devenues désertes ;
+• Augmentation du nombre de piéton.ne.s sur la voie publique,
+les parcs et les rues piétonnes.
+Bien que le bilan routier 2021 soit globalement positif, à l’exception des collisions
+impliquant des cyclistes, le SPVM compte maintenir ses efforts de prévention
+et de répression des comportements imprudents autour de deux axes :
+• La nécessaire cohabitation de l’ensemble des usagers de la route ;
+• La lutte aux facteurs contributifs aux accidents, soit la vitesse
+et l’omission des automobilistes de céder le passage.
+INFRACTIONS ROUTIÈRES
+Variation
+2020 2021 2020/2021
+CONDUITE DANGEREUSE
+Conduite dangereuse causant la mort 1 3 +
+Conduite dangereuse causant des lésions corporelles 15 14 -
+Conduite dangereuse d'un véhicule à moteur 82 143 +
+TOTAL PARTIEL 98 160 +
+DÉLIT DE FUITE21
+Code criminel 4 371 4 634 +
+Code de la sécurité routière 294 293 -
+TOTAL PARTIEL 4 665 4 927 +
+CONDUITE AVEC FACULTÉS AFFAIBLIES
+Conduite avec facultés affaiblies causant la mort 0 1 +
+Conduite avec facultés affaiblies causant des lésions corporelles 20 18 -
+Conduite avec facultés affaiblies 1 259 1 124 -
+TOTAL PARTIEL 1 279 1 143 -
+CONDUITE D’UN VÉHICULE À MOTEUR PENDANT UNE INTERDICTION
+Code criminel 101 101 =
+TOTAL PARTIEL 101 101 =
+TOTAL GLOBAL 6 143 6 331 +
+Source : M-IRIS, en date du 20 février 2022.
+————
+21 Les corps de police produisent rarement des rapports d’accident lors d’un délit de fuite sans suspect, sans témoin ni élément de preuve. La Société
+de l’assurance automobile du Québec (SAAQ) offre, depuis décembre 2018, diverses options à la population pour prouver qu’elle a communiqué avec
+un corps de police. Le changement d’orientation et le passage vers les codes 9000 au Module d’information policière (MIP), en décembre 2019, expliquent
+la variation importante des statistiques à partir de l’année 2019. Ainsi, cela fait en sorte que plusieurs délits de fuite qui étaient auparavant comptabilisés
+au Code de la sécurité routière sont maintenant comptabilisés dans la catégorie associée au Code criminel. D’un autre côté, un délit de fuite matériel
+sans aucun indice sur le plan des enquêtes n’est maintenant plus comptabilisé.
+Table des 29
+matières
+
+--- PAGE 32 ---
+RRaappppoorrtt dd’’aaccttiivviittééss 22002211 SSEERRVVIICCEE DDEE PPOOLLIICCEE DDEE LLAA VVIILLLLEE DDEE MMOONNTTRRÉÉAALL
+CONSTATS D’INFRACTION ÉMIS, PAR RÉGION
+Total
+Infractions Ouest Sud Nord Est Autre22 SPVM
+Infractions en mouvement 63 268 31 264 54 467 33 843 26 556 209 398
+Infractions de vitesse 13 799 3 790 8 981 8 656 27 132 62 358
+Infractions de stationnement 22 049 35 735 35 704 20 903 8 428 122 819
+(émises par les policiers)
+TOTAL 99 116 70 789 99 152 63 402 62 116 394 575
+Source : Système d’émission de constats informatisés (SECI), en date du 17 février 2022.
+SYSTÈME DE RECONNAISSANCE DE PLAQUES D’IMMATRICULATION
+Variation
+Constats d’infraction émis 2020 2021 2020/2021
+INFRACTIONS RELATIVES AUX DROITS D’IMMATRICULATION 1 557 3 254 +
+Véhicule non immatriculé au nom du propriétaire 5 2 -
+Immatriculation impayée à l’échéance 1 112 1 939 +
+Immatriculation impayée à la suite d'une renonciation 92 259 +
+Interdiction de circuler 348 1 054 +
+INFRACTIONS RELATIVES AUX PERMIS DE CONDUIRE 515 1 446 +
+Non titulaire de permis de la classe appropriée 42 78 +
+Permis impayé 213 549 +
+Sanction amende impayée ou autres (sauf Code criminel et points 240 734 +
+d’inaptitude)
+Sanction (Code criminel) 2 7 +
+Sanction (points d’inaptitude) 18 78 +
+AUTRES INFRACTIONS 533 1 113 +
+TOTAL 2 605 5 813 +
+————
+22 Il s’agit des constats d’infraction émis par les policiers d’unités autres que les PDQ (Section de la sécurité routière, Section support
+et interventions spécialisées, Motards, etc.).
+Table des 30
+matières
+
+--- PAGE 33 ---
+Rapport d’activités 2021 SERVICE DE POLICE DE LA VILLE DE MONTRÉAL
+CONSTATS D’INFRACTION ÉMIS AUX CYCLISTES ET AUX PIÉTONS
+Variation
+2020 2021 2020/2021
+Cyclistes 5 296 7 012 +
+Piétons 8 761 7 786 -
+TOTAL 14 057 14 798 +
+Source : SAAQ. Données finales 2021 confirmées en date du 21 mars 2022.
+COMPARAISON DES COLLISIONS SELON LEUR GRAVITÉ
+Variation
+Nature des collisions 2020 2021 2020/2021
+Nombre de collisions mortelles (nombre de décès) 29 (30) 25 (25) -
+Nombre de collisions avec blessés graves 136 106 -
+Nombre de collisions avec blessés légers 3 006 4 060 +
+Nombre de collisions avec dommages matériels 10 100 10 036 -
+TOTAL 13 271 14 227 +
+Source : SAAQ. Données finales 2021 confirmées en date du 21 mars 2022.
+COMPARAISON DES COLLISIONS SELON LEUR GRAVITÉ - CYCLISTES
+Variation
+Nature des collisions 2020 2021 2020/2021
+Nombre de collisions mortelles (nombre de décès) 1 (1) 5 (5) +
+Nombre de collisions avec blessés graves (nombre de blessés) 22 (21) 23 (23) +
+Nombre de collisions avec blessés légers (nombre de blessés) 445 (442) 574 (577) +
+TOTAL 468 (464) 602 (605) +
+Source : SAAQ. Données finales 2021 confirmées en date du 21 mars 2022.
+Source : SAAQ. Données finales 2021 confirmées en date du 21 mars 2022.
+COMPARAISON DES COLLISIONS SELON LEUR GRAVITÉ - PIÉTONS
+Variation
+Nature des collisions 2020 2021 2020/2021
+Nombre de collisions mortelles (nombre de décès) 18 (18) 11 (11) -
+Nombre de collisions avec blessés graves (nombre de blessés) 52 (51) 40 (46) -
+Nombre de collisions avec blessés légers (nombre de blessés) 635 (655) 756 (767) +
+TOTAL 705 (724) 807 (824) +
+Source : SAAQ. Données finales 2021 confirmées en date du 21 mars 2022.
+Table des 31
+matières
+
+--- PAGE 34 ---
+Rapport d’activités 2021 SERVICE DE POLICE DE LA VILLE DE MONTRÉAL
+STATISTIQUES ADMINISTRATIVES
+DEMANDES D’ACCÈS À L’INFORMATION
+Provenance des demandes 2021
+Citoyens, avocats et journalistes 3 755
+Compagnies d’assurances 2 859
+Agence des services frontaliers du Canada (ASFC) 105
+Commission des droits de la personne et des droits de la jeunesse (CDPDJ) 27
+Commission des libérations conditionnelles du Canada (CLCC) 136
+Direction de la protection de la jeunesse (DPJ) 511
+Indemnisation des victimes d’actes criminels (IVAC) 50
+Corps de police 200
+Société de l’assurance automobile du Québec (SAAQ) 139
+Service correctionnel Canada (SCC) 164
+Demandes de partenaires internes (CM, SIM, VDM et autres villes liées) 84
+Citations à comparaître (TAL, IVAC, MSS) 63
+Autres organismes (RBQ, RRQ, SCQ, US, etc.) 93
+TOTAL 8 186
+Types de demandes 2021
+Documents contenant des renseignements personnels 7 971
+Documents administratifs 215
+TOTAL 8 186
+DOSSIERS TRAITÉS PAR LE BUREAU DU SERVICE AUX CITOYENS
+Variation
+Nombre de dossiers ouverts 2020 2021 2020/2021
+Plaintes 2 434 2 425 -
+Commentaires et félicitations 923 1 098 +
+Demandes d’information 1 165 1 110 -
+TOTAL 4 522 4 633 +
+SANTÉ ET SÉCURITÉ AU TRAVAIL
+Variation
+Nombre d’accidents23 2020 2021 2020/2021
+Policiers 229 341 +
+Employés civils 45 16 -
+TOTAL 274 357 +
+————
+23 Selon la date à laquelle les données sont extraites, elles peuvent fluctuer. Elles peuvent, à titre d’exemple, varier s’il y a des contestations
+judiciaires ou encore l’apparition de lésions au fil du temps.
+Table des 32
+matières
+
+--- PAGE 35 ---
+Rapport d’activités 2021 SERVICE DE POLICE DE LA VILLE DE MONTRÉAL
+LOI SUR LA POLICE
+ALLÉGATIONS D’INFRACTION CRIMINELLE24
+2020 2020 2021
+(au 31 décembre 2020) (au 31 décembre 2021) (au 31 décembre 2021)
+TOTAL DU NOMBRE DE DOSSIERS OUVERTS 110 114 190
+DE NATURE CRIMINELLE
+NOMBRE DE DOSSIERS EN TRAITEMENT 46 14 72
+NOMBRE DE DOSSIERS FERMÉS 64 100 118
+Enquêtes avec mise en accusation (MEA) (policiers du SPVM) 3 6 1
+Enquêtes MEA (policiers autres que du SPVM) 1 0 0
+Enquêtes sans mise en accusation (SMA) / inactives / non fondées 45 77 65
+(policiers du SPVM)
+Enquêtes SMA / inactives / non fondées (policiers autres 10 11 45
+que du SPVM)
+Enquêtes SMA / inactives / non fondées (personnes inconnues) 3 3 2
+Enquêtes MEA (personnes non assujetties à la Loi sur la police) 0 0 0
+Enquêtes SMA / inactives / non fondées (personnes 2 3 5
+non assujetties à la Loi sur la police)
+DOSSIERS COMPLÉTÉS PAR LE PROCESSUS JUDICIAIRE
+Policiers du SPVM trouvés coupables 0 0 0
+Policiers du SPVM trouvés non coupables 1 5 1
+Policiers autres que du SPVM trouvés coupables 0 0 0
+Policiers autres que du SPVM trouvés non coupables 0 0 0
+Personnes autres que des policiers trouvées coupables 0 0 0
+Personnes autres que des policiers trouvées non coupables 0 0 0
+DOSSIERS TRAITÉS PAR CATÉGORIES DE PERSONNES
+Dossier impliquant un policier du SPVM 3 2 1
+Dossier impliquant un policier autre que du SPVM 13 15 60
+Dossier impliquant une personne inconnue 10 4 3
+Dossier impliquant une personne non assujettie 2 3 7
+à la Loi sur la police
+Dossier impliquant un policier du SPVM qui fait l'objet 82 90 119
+d'une enquête par un autre corps de police
+Note : Les dossiers d’allégations criminelles ont été transférés officiellement à la SQ le 22 mars 2017. Depuis, la SQ poursuit le traitement des dossiers
+de nature criminelle.
+————
+24 Les statistiques sont mises à jour en fonction de l’année d’ouverture du dossier.
+Table des 33
+matières
+
+--- PAGE 36 ---
+Rapport d’activités 2021 SERVICE DE POLICE DE LA VILLE DE MONTRÉAL
+RÈGLEMENT SUR LA DISCIPLINE INTERNE DES POLICIERS DU SPVM
+2020 2020 2021
+(au 31 décembre 2020) (au 31 décembre 2021) (au 31 décembre 2021)
+NOMBRE DE DOSSIERS DISCIPLINAIRES OUVERTS25 64 72 59
+Nombre de dossiers en traitement ou en attente 25 16 15
+Nombre de dossiers en attente d'audition 4 1 4
+Nombre de dossiers terminés 35 66 46
+Classés non fondés 7 17 5
+Classés SMA : acte de gestion 3 7 5
+Classés SMA : article 14 0 5 6
+Classés SMA 0 3 0
+Classés SMA : perte de juridiction 1 1 3
+Classés SMA : prescription (article 16) 0 0 1
+Classés MEA : gestionnaire (article 17) 23 32 27
+Classés MEA : officier de poursuite (SAI) 1 1 0
+Classés inactifs 0 0 0
+NOMBRE DE POLICIERS CONCERNÉS PAR LES DOSSIERS 84 83 66
+DISCIPLINAIRES OUVERTS
+SANCTIONS LIÉES AUX DOSSIERS AVEC MEA FERMÉS
+Nombre de réprimandes 22 24 15
+Nombre de journées de suspension disciplinaire 113 113 26
+Nombre de mutations disciplinaires 0 0 0
+Nombre de rétrogradations 0 0 0
+Nombre de destitutions 0 0 0
+NOMBRE DE DEMANDES DE RADIATIONS DE SANCTIONS 12 12 18
+Nombre de demandes accordées 11 11 15
+Nombre de demandes accordées en partie 0 0 0
+Nombre de demandes refusées ou reportées 1 1 3
+————
+25 Pour l’année 2020, 8 dossiers en allégations criminelles furent traités en discipline depuis la publication du dernier rapport annuel. Les statistiques sont mises à jour
+en fonction de l’année d’ouverture du dossier.
+Table des 34
+matières
+
+--- PAGE 37 ---
+Rapport d’activités 2021 SERVICE DE POLICE DE LA VILLE DE MONTRÉAL
+APPLICATION DE L’ARTICLE 11926 DE LA LOI SUR LA POLICE
+2020 2020 2021
+(au 31 décembre 2020) (au 31 décembre 2021) (au 31 décembre 2021)
+NOMBRE DE DOSSIERS OUVERTS27 2 2 1
+Nombre de causes terminées 0 1 1
+N ombre de causes ayant entraîné une suspension disciplinaire 0 75 73
+(nombre de jours)
+Nombre de destitutions 0 0 0
+Nombre de pertes de juridiction 0 0 0
+Nombre de causes en suspens (causes en appel) ou reportées 2 1 0
+DÉONTOLOGIE28 ET BUREAU DES ENQUÊTES INDÉPENDANTES29
+Variation
+2020 2021 2020/2021
+DÉONTOLOGIE
+Nombre de plaintes reçues par le Commissaire à la déontologie 793 652 -
+policière
+BUREAU DES ENQUÊTES INDÉPENDANTES
+Ouvertures de dossier 11 11 =
+Pour de plus amples renseignements, veuillez vous référer aux publications du Commissaire à la déontologie policière
+et du Bureau des enquêtes indépendantes.
+————
+26 1er alinéa de l’article 119 de la Loi sur la police : est automatiquement destitué tout policier ou constable spécial qui a été reconnu coupable,
+en quelque lieu que ce soit et par suite d’un jugement passé en force de chose jugée.
+2e alinéa : doit faire l’objet d’une sanction disciplinaire de destitution tout policier ou constable spécial qui a été reconnu coupable, en quelque lieu que ce soit et par
+suite d’un jugement passé en force de chose jugée, d’un tel acte ou d’une telle omission, poursuivable, soit sur déclaration de culpabilité par procédure sommaire,
+soit par voie de mise en accusation, à moins qu’il ne démontre que des circonstances particulières justifient une autre sanction.
+27 Aucun dossier ouvert en vertu du 1er alinéa.
+28 Depuis 2018, les statistiques proviennent du Commissaire à la déontologie policière.
+29 Depuis 2017, les statistiques proviennent du Bureau des enquêtes indépendantes.
+Table des 35
+matières
+
+--- PAGE 38 ---
+Rapport d’activités 2021 SERVICE DE POLICE DE LA VILLE DE MONTRÉAL
+LE DON D’ORGANES ET LE PERSONNEL DU SPVM
+L’ensemble des efforts déployés par les 130 policier.ère.s bénévoles et les employé.e.s civil.e.s du SPVM
+pour cette cause est exceptionnel et tout à fait cohérent avec la mission du SPVM de protéger la vie !
+Au-delà des transports d’organes et d’équipes médicales, les bénévoles pour l’Association canadienne des dons
+d’organes et de tissus (ACDO) s’impliquent pour sensibiliser les gens au don d’organes en soutenant des partenaires,
+tels que Transplant Québec et l’organisme Chaîne de vie.
+Malgré les restrictions sanitaires en 2021, les bénévoles ont souhaité participer, entre autres, au Défi Chaîne de
+vie ayant pour but de soutenir la sensibilisation au don d’organes dans les écoles secondaires. Toutes et tous ont
+également représenté le SPVM à la cérémonie annuelle de l’ACDO pour rendre hommage aux donneur.euse.s et à leur
+famille, à Sherbrooke. Il s’agit là d’un moment très important pour soutenir les familles endeuillées qui ont consenti
+à ce que la vie continue, pour d’autres personnes.
+CONTRIBUTION DU SPVM À L’ASSOCIATION CANADIENNE
+DES DONS D’ORGANES ET DE TISSUS
+Variation
+2020 2021 2020/2021
+Transport d’organes et d’équipes médicales 251 247 -
+Nombre de policiers bénévoles 142 130 -
+Merci à la
+population
+L’année 2021 aura permis au SPVM de multiplier
+les occasions de rencontres et d’actions avec les
+Montréalaises et les Montréalais. Nous souhaitons
+vous remercier pour votre confiance et votre appui ;
+vous êtes le cœur de notre mission, notre priorité !
+Table des 36
+matières
+
+--- PAGE 39 ---
+RRaappppoorrtt dd’’aaccttiivviittééss 22002211 SSEERRVVIICCEE DDEE PPOOLLIICCEE DDEE LLAA VVIILLLLEE DDEE MMOONNTTRRÉÉAALL
+Annexe :
+Tableaux détaillés
+sur la criminalité
+Table des 37
+matières
+
+--- PAGE 40 ---
+Rapport d’activités 2021 SERVICE DE POLICE DE LA VILLE DE MONTRÉAL ANNEXE
+CRIMINALITÉ PAR MOIS
+Infractions J F M A M J J A S O N D Total
+CRIMES CONTRE LA PERSONNE
+Homicides 3 3 2 0 2 0 3 4 7 5 2 5 36
+Autres infractions
+0 0 0 0 0 1 0 0 0 0 0 0 1
+entraînant la mort
+Tentatives
+9 6 12 4 7 9 19 26 18 12 8 9 139
+de meurtre
+Voies de fait 859 831 1 039 1 094 1 274 1 433 1 369 1 430 1 250 1 316 1 181 1 157 14 233
+Agressions sexuelles 162 174 191 191 193 180 191 226 218 221 226 192 2 365
+Vols qualifiés 140 127 166 128 179 184 162 187 229 218 203 179 2 102
+Autres infractions
+407 412 577 545 560 617 502 548 508 514 520 543 6 253
+contre la personne
+TOTAL PARTIEL 1 580 1 553 1 987 1 962 2 215 2 424 2 246 2 421 2 230 2 286 2 140 2 085 25 129
+CRIMES CONTRE LA PROPRIÉTÉ
+Crimes d’incendie 21 10 18 42 42 31 31 43 44 33 44 24 383
+Introductions
+355 276 337 387 407 390 441 519 543 521 496 400 5 072
+par effraction
+Vols de véhicules
+340 245 375 404 473 597 661 697 642 733 664 696 6 527
+à moteur
+Vols simples 1 194 1 095 1 311 1 313 1 647 1 722 1 842 1 795 1 950 1 801 1 972 1 831 19 473
+Possession
+35 30 39 27 47 47 45 69 36 56 56 43 530
+de biens volés
+Fraudes 775 814 830 749 768 697 604 666 733 648 700 634 8 618
+Méfaits 314 279 411 519 497 548 577 606 555 598 502 391 5 797
+TOTAL PARTIEL 3 034 2 749 3 321 3 441 3 881 4 032 4 201 4 395 4 503 4 390 4 434 4 019 46 400
+AUTRES INFRACTIONS AU CODE CRIMINEL
+Infractions relatives
+23 22 38 26 40 30 31 27 30 46 33 30 376
+aux armes à feu
+Infractions contre
+l’administration de 429 383 466 465 580 495 500 498 451 452 415 419 5 553
+la loi et de la justice
+Autres infractions 98 57 95 92 147 132 107 130 141 98 107 85 1 289
+TOTAL PARTIEL 550 462 599 583 767 657 638 655 622 596 555 534 7 218
+TOTAL DES
+INFRACTIONS AU 5 164 4 764 5 907 5 986 6 863 7 113 7 085 7 471 7 355 7 272 7 129 6 638 78 747
+CODE CRIMINEL
+AUTRES LOIS ET RÈGLEMENTS
+Loi sur les aliments
+142 125 155 151 150 146 151 157 138 166 124 78 1 683
+et drogues
+Infractions aux
+33 68 95 52 57 67 58 45 46 11 15 10 557
+lois fédérales
+Infractions aux
+1 305 1 135 1 103 1 329 958 89 73 56 97 170 103 82 6 500
+lois provinciales
+Règlements
+317 342 458 522 690 1 076 1 031 922 696 604 416 359 7 433
+municipaux
+TOTAL PARTIEL 1 797 1 670 1 811 2 054 1 855 1 378 1 313 1 180 977 951 658 529 16 173
+TOTAL GLOBAL 6 961 6 434 7 718 8 040 8 718 8 491 8 398 8 651 8 332 8 223 7 787 7 167 94 920
+Source : M-IRIS, en date du 20 février 2022.
+Table des 38
+matières
+
+--- PAGE 41 ---
+Rapport d’activités 2021 SERVICE DE POLICE DE LA VILLE DE MONTRÉAL ANNEXE
+CRIMINALITÉ PAR RÉGION
+Infractions Ouest Sud Nord Est Total
+CRIMES CONTRE LA PERSONNE
+Homicides 8 7 6 15 36
+Autres infractions entraînant la mort 1 0 0 0 1
+Tentatives de meurtre 22 42 40 35 139
+Voies de fait 3 749 3 362 3 691 3 431 14 233
+Agressions sexuelles 604 542 532 687 2 365
+Vols qualifiés 477 529 543 553 2 102
+Autres infractions contre la personne 1 649 1 309 1 550 1 745 6 253
+TOTAL PARTIEL 6 510 5 791 6 362 6 466 25 129
+CRIMES CONTRE LA PROPRIÉTÉ
+Crimes d’incendie 91 91 92 109 383
+Introductions par effraction 1 169 1 296 1 397 1 210 5 072
+Vols de véhicules à moteur 2 096 676 1 653 2 102 6 527
+Vols simples 4 784 5 249 5 151 4 289 19 473
+Possession de biens volés 97 172 151 110 530
+Fraudes 2 324 1 480 2 600 2 214 8 618
+Méfaits 1 298 1 818 1 410 1 271 5 797
+TOTAL PARTIEL 11 859 10 782 12 454 11 305 46 400
+AUTRES INFRACTIONS AU CODE CRIMINEL
+Infractions relatives aux armes à feu 98 92 73 113 376
+Infractions contre l’administration de la loi 1 181 1 914 1 232 1 226 5 553
+et de la justice
+Autres infractions 224 599 185 281 1 289
+TOTAL PARTIEL 1 503 2 605 1 490 1 620 7 218
+TOTAL DES INFRACTIONS AU CODE CRIMINEL 19 872 19 178 20 306 19 391 78 747
+AUTRES LOIS ET RÈGLEMENTS
+Loi sur les aliments et drogues 345 594 308 436 1 683
+Infractions aux lois fédérales 273 103 113 68 557
+Infractions aux lois provinciales 1 457 1 805 1 843 1 395 6 500
+Règlements municipaux 980 3 352 2 184 917 7 433
+TOTAL PARTIEL 3 055 5 854 4 448 2 816 16 173
+TOTAL GLOBAL 22 927 25 032 24 754 22 207 94 920
+Source : M-IRIS, en date du 20 février 2022.
+Table des 39
+matières
+
+--- PAGE 42 ---
+Rapport d’activités 2021 SERVICE DE POLICE DE LA VILLE DE MONTRÉAL ANNEXE
+CRIMINALITÉ PAR POSTE DE QUARTIER | RÉGION OUEST
+Infractions 1 3 4 5 7 8 9 13 26 5530 Total
+CRIMES CONTRE LA PERSONNE
+Homicides 0 0 0 0 0 2 1 3 2 0 8
+Autres infractions
+0 1 0 0 0 0 0 0 0 0 1
+entraînant la mort
+Tentatives de meurtre 0 0 0 0 3 0 7 3 9 0 22
+Voies de fait 97 403 136 276 448 441 612 552 778 6 3 749
+Agressions sexuelles 25 76 27 51 83 45 82 95 120 0 604
+Vols qualifiés 15 39 15 34 91 50 65 42 125 1 477
+Autres infractions contre
+60 164 80 111 158 212 274 254 324 12 1 649
+la personne
+TOTAL PARTIEL 197 683 258 472 783 750 1 041 949 1 358 19 6 510
+CRIMES CONTRE LA PROPRIÉTÉ
+Crimes d’incendie 4 10 2 3 17 15 14 8 18 0 91
+Introductions par effraction 75 117 52 110 171 102 143 152 246 1 1 169
+Vols de véhicules à moteur 89 105 112 246 494 127 276 243 402 2 2 096
+Vols simples 214 270 169 418 674 388 732 625 1 253 41 4 784
+Possession de biens volés 6 7 0 13 14 7 21 11 18 0 97
+Fraudes 131 218 108 191 323 216 307 284 542 4 2 324
+Méfaits 38 112 47 110 150 125 230 171 309 6 1 298
+TOTAL PARTIEL 557 839 490 1 091 1 843 980 1 723 1 494 2 788 54 11 859
+AUTRES INFRACTIONS AU CODE CRIMINEL
+Infractions relatives
+0 9 0 5 13 4 9 5 17 36 98
+aux armes à feu
+Infractions contre
+l’administration de 24 91 25 55 81 155 284 155 300 11 1 181
+la loi et de la justice
+Autres infractions 10 12 17 17 58 21 25 32 31 1 224
+TOTAL PARTIEL 34 112 42 77 152 180 318 192 348 48 1 503
+TOTAL DES INFRACTIONS
+788 1 634 790 1 640 2 778 1 910 3 082 2 635 4 494 121 19 872
+AU CODE CRIMINEL
+AUTRES LOIS ET RÈGLEMENTS
+Loi sur les aliments
+12 27 7 17 36 46 67 39 92 2 345
+et drogues
+Infractions aux
+28 19 5 34 11 34 28 14 83 17 273
+lois fédérales
+Infractions aux
+27 112 21 65 146 227 280 172 385 22 1 457
+lois provinciales
+Règlements municipaux 25 96 27 90 54 117 205 127 239 0 980
+TOTAL PARTIEL 92 254 60 206 247 424 580 352 799 41 3 055
+TOTAL GLOBAL 880 1 888 850 1 846 3 025 2 334 3 662 2 987 5 293 162 22 927
+Source : M-IRIS, en date du 20 février 2022.
+————
+30 55 : Unité aéroportuaire.
+Table des 40
+matières
+
+--- PAGE 43 ---
+Rapport d’activités 2021 SERVICE DE POLICE DE LA VILLE DE MONTRÉAL ANNEXE
+CRIMINALITÉ PAR POSTE DE QUARTIER | RÉGION SUD
+Infractions 12 15 16 20 21 22 5031 Total
+CRIMES CONTRE LA PERSONNE
+Homicides 1 2 1 1 1 1 0 7
+Autres infractions
+0 0 0 0 0 0 0 0
+entraînant la mort
+Tentatives de meurtre 4 7 2 9 6 11 3 42
+Voies de fait 351 586 453 619 669 405 279 3 362
+Agressions sexuelles 45 121 89 97 107 54 29 542
+Vols qualifiés 46 77 52 72 150 80 52 529
+Autres infractions contre
+91 268 224 184 269 194 79 1 309
+la personne
+TOTAL PARTIEL 538 1 061 821 982 1 202 745 442 5 791
+CRIMES CONTRE LA PROPRIÉTÉ
+Crimes d’incendie 5 19 5 15 22 18 7 91
+Introductions par effraction 128 298 177 202 246 229 16 1 296
+Vols de véhicules à moteur 67 189 91 108 129 92 0 676
+Vols simples 538 737 651 1 222 1 312 702 87 5 249
+Possession de biens volés 11 32 28 13 36 48 4 172
+Fraudes 166 238 292 315 235 228 6 1 480
+Méfaits 140 263 150 374 353 194 344 1 818
+TOTAL PARTIEL 1 055 1 776 1 394 2 249 2 333 1 511 464 10 782
+AUTRES INFRACTIONS AU CODE CRIMINEL
+Infractions relatives
+7 13 6 17 31 12 6 92
+aux armes à feu
+Infractions contre l’administration
+82 243 152 242 864 230 101 1 914
+de la loi et de la justice
+Autres infractions 15 19 24 324 175 19 23 599
+TOTAL PARTIEL 104 275 182 583 1 070 261 130 2 605
+TOTAL DES INFRACTIONS
+1 697 3 112 2 397 3 814 4 605 2 517 1 036 19 178
+AU CODE CRIMINEL
+AUTRES LOIS ET RÈGLEMENTS
+Loi sur les aliments
+36 70 38 80 271 80 19 594
+et drogues
+Infractions aux lois fédérales 10 6 9 19 50 8 1 103
+Infractions aux lois
+81 232 205 386 548 227 126 1 805
+provinciales
+Règlements municipaux 142 296 188 600 1 434 316 376 3 352
+TOTAL PARTIEL 269 604 440 1 085 2 303 631 522 5 854
+TOTAL GLOBAL 1 966 3 716 2 837 4 899 6 908 3 148 1 558 25 032
+Source : M-IRIS, en date du 20 février 2022.
+————
+31 50 : Unité métro.
+Table des 41
+matières
+
+--- PAGE 44 ---
+Rapport d’activités 2021 SERVICE DE POLICE DE LA VILLE DE MONTRÉAL ANNEXE
+CRIMINALITÉ PAR POSTE DE QUARTIER | RÉGION NORD
+Infractions 10 27 30 31 33 35 38 44 Total
+CRIMES CONTRE LA PERSONNE
+Homicides 0 0 1 1 1 0 3 0 6
+Autres infractions
+0 0 0 0 0 0 0 0 0
+entraînant la mort
+Tentatives de meurtre 8 3 18 1 1 0 6 3 40
+Voies de fait 298 435 445 370 250 337 959 597 3 691
+Agressions sexuelles 39 84 84 52 26 46 110 91 532
+Vols qualifiés 56 60 55 51 39 54 148 80 543
+Autres infractions contre
+126 223 168 170 115 139 347 262 1 550
+la personne
+TOTAL PARTIEL 527 805 771 645 432 576 1 573 1 033 6 362
+CRIMES CONTRE LA PROPRIÉTÉ
+Crimes d’incendie 6 11 13 13 1 9 25 14 92
+Introductions par effraction 88 191 100 123 58 156 493 188 1 397
+Vols de véhicules à moteur 225 331 241 155 101 121 215 264 1 653
+Vols simples 424 632 544 503 263 502 1 400 883 5 151
+Possession de biens volés 8 23 28 14 7 20 31 20 151
+Fraudes 217 449 243 318 89 308 541 435 2 600
+Méfaits 93 160 183 134 73 157 374 236 1 410
+TOTAL PARTIEL 1 061 1 797 1 352 1 260 592 1 273 3 079 2 040 12 454
+AUTRES INFRACTIONS AU CODE CRIMINEL
+Infractions relatives
+7 7 12 10 2 11 17 7 73
+aux armes à feu
+Infractions contre
+l’administration de 53 143 139 103 56 219 316 203 1 232
+la loi et de la justice
+Autres infractions 11 18 12 19 9 24 49 43 185
+TOTAL PARTIEL 71 168 163 132 67 254 382 253 1 490
+TOTAL DES INFRACTIONS
+1 659 2 770 2 286 2 037 1 091 2 103 5 034 3 326 20 306
+AU CODE CRIMINEL
+AUTRES LOIS ET RÈGLEMENTS
+Loi sur les aliments
+13 52 35 26 19 26 73 64 308
+et drogues
+Infractions aux lois fédérales 7 13 14 5 10 15 43 6 113
+Infractions aux lois
+130 190 168 136 107 215 694 203 1 843
+provinciales
+Règlements municipaux 54 162 151 149 84 150 1 170 264 2 184
+TOTAL PARTIEL 204 417 368 316 220 406 1 980 537 4 448
+TOTAL GLOBAL 1 863 3 187 2 654 2 353 1 311 2 509 7 014 3 863 24 754
+Source : M-IRIS, en date du 20 février 2022.
+Table des 42
+matières
+
+--- PAGE 45 ---
+Rapport d’activités 2021 SERVICE DE POLICE DE LA VILLE DE MONTRÉAL ANNEXE
+CRIMINALITÉ PAR POSTE DE QUARTIER | RÉGION EST
+Infractions 23 39 42 45 46 48 49 Total
+CRIMES CONTRE LA PERSONNE
+Homicides 1 4 4 4 2 0 0 15
+Autres infractions
+0 0 0 0 0 0 0 0
+entraînant la mort
+Tentatives de meurtre 0 8 10 11 3 0 3 35
+Voies de fait 437 1 005 443 257 251 684 354 3 431
+Agressions sexuelles 83 112 53 51 48 125 215 687
+Vols qualifiés 64 104 77 38 64 137 69 553
+Autres infractions contre
+194 383 234 158 133 389 254 1 745
+la personne
+TOTAL PARTIEL 779 1 616 821 519 501 1 335 895 6 466
+CRIMES CONTRE LA PROPRIÉTÉ
+Crimes d’incendie 17 22 18 7 7 24 14 109
+Introductions par effraction 320 202 172 70 80 230 136 1 210
+Vols de véhicules à moteur 124 381 418 215 309 419 236 2 102
+Vols simples 773 755 657 263 507 878 456 4 289
+Possession de biens volés 29 27 9 6 5 23 11 110
+Fraudes 253 320 461 261 231 424 264 2 214
+Méfaits 219 226 168 109 118 271 160 1 271
+TOTAL PARTIEL 1 735 1 933 1 903 931 1 257 2 269 1 277 11 305
+AUTRES INFRACTIONS AU CODE CRIMINEL
+Infractions relatives
+8 37 20 11 5 11 21 113
+aux armes à feu
+Infractions contre l’administration
+258 326 126 57 42 294 123 1 226
+de la loi et de la justice
+Autres infractions 20 26 30 7 14 28 156 281
+TOTAL PARTIEL 286 389 176 75 61 333 300 1 620
+TOTAL DES INFRACTIONS
+2 800 3 938 2 900 1 525 1 819 3 937 2 472 19 391
+AU CODE CRIMINEL
+AUTRES LOIS ET RÈGLEMENTS
+Loi sur les aliments
+54 97 69 21 14 85 96 436
+et drogues
+Infractions aux lois fédérales 12 10 3 10 1 10 22 68
+Infractions aux lois
+266 318 202 108 53 194 254 1 395
+provinciales
+Règlements municipaux 235 288 89 18 27 186 74 917
+TOTAL PARTIEL 567 713 363 157 95 475 446 2 816
+TOTAL GLOBAL 3 367 4 651 3 263 1 682 1 914 4 412 2 918 22 207
+Source : M-IRIS, en date du 20 février 2022.
+Table des 43
+matières
+
+--- PAGE 46 ---
+RAPPORT
+d’activités
+SERVICE DE POLICE DE LA VILLE DE MONTRÉAL
+2021
+spvm.qc.ca

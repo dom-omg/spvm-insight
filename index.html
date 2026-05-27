@@ -1,0 +1,1829 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SPVM INSIGHT — Tableau de bord analytique</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <style>
+    :root {
+      --spvm-blue: #003087;
+      --spvm-mid: #1a5276;
+      --spvm-light: #2e86c1;
+      --spvm-accent: #f39c12;
+      --spvm-red: #c0392b;
+      --spvm-green: #27ae60;
+      --bg-dark: #0d1117;
+      --bg-card: #161b22;
+      --bg-card2: #1c2333;
+      --text-main: #e6edf3;
+      --text-muted: #8b949e;
+      --border: #30363d;
+    }
+    * { box-sizing: border-box; }
+    body {
+      background: var(--bg-dark);
+      color: var(--text-main);
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      margin: 0; padding: 0;
+    }
+
+    /* ── HEADER ── */
+    .app-header {
+      background: linear-gradient(135deg, #001a4d 0%, #003087 60%, #1a5276 100%);
+      padding: 12px 24px;
+      display: flex; align-items: center; gap: 16px;
+      border-bottom: 2px solid var(--spvm-accent);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .app-header .badge-ai {
+      background: var(--spvm-accent); color: #000;
+      font-size: 0.65rem; font-weight: 700;
+      padding: 2px 7px; border-radius: 20px;
+      letter-spacing: 1px; text-transform: uppercase;
+    }
+    .app-header h1 { font-size: 1.25rem; font-weight: 700; margin: 0; letter-spacing: 2px; color: #fff; }
+    .app-header .subtitle { font-size: 0.72rem; color: #a8c7fa; }
+
+    /* ── NAV TABS ── */
+    .main-nav {
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--border);
+      padding: 0 16px;
+      display: flex; gap: 2px; overflow-x: auto;
+    }
+    .main-nav button {
+      background: none; border: none; color: var(--text-muted);
+      padding: 12px 16px; font-size: 0.8rem; font-weight: 500;
+      cursor: pointer; white-space: nowrap;
+      border-bottom: 2px solid transparent;
+      transition: all .2s;
+    }
+    .main-nav button:hover { color: var(--text-main); }
+    .main-nav button.active { color: var(--spvm-accent); border-bottom-color: var(--spvm-accent); }
+
+    /* ── LAYOUT ── */
+    .app-body { display: flex; height: calc(100vh - 96px); overflow: hidden; }
+    .main-content { flex: 1; overflow-y: auto; padding: 20px; }
+    .ai-panel {
+      width: 380px; background: var(--bg-card);
+      border-left: 1px solid var(--border);
+      display: flex; flex-direction: column;
+      transition: width .3s;
+    }
+    .ai-panel.collapsed { width: 42px; overflow: hidden; }
+
+    /* ── CARDS ── */
+    .card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 16px; margin-bottom: 16px;
+    }
+    .card-title {
+      font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 1px; color: var(--text-muted); margin-bottom: 14px;
+    }
+    .card-title i { margin-right: 6px; color: var(--spvm-accent); }
+
+    /* ── KPI CARDS ── */
+    .kpi-grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); }
+    .kpi-card {
+      background: var(--bg-card2); border: 1px solid var(--border);
+      border-radius: 8px; padding: 14px; position: relative; overflow: hidden;
+    }
+    .kpi-card::before {
+      content: ''; position: absolute; top: 0; left: 0;
+      width: 3px; height: 100%; background: var(--kpi-color, var(--spvm-light));
+    }
+    .kpi-label { font-size: 0.68rem; color: var(--text-muted); margin-bottom: 6px; line-height: 1.3; }
+    .kpi-value { font-size: 1.55rem; font-weight: 700; line-height: 1; }
+    .kpi-trend {
+      font-size: 0.7rem; margin-top: 5px;
+      display: flex; align-items: center; gap: 4px;
+    }
+    .trend-up-bad { color: var(--spvm-red); }
+    .trend-down-good { color: var(--spvm-green); }
+    .trend-up-good { color: var(--spvm-green); }
+    .trend-down-bad { color: var(--spvm-red); }
+    .trend-neutral { color: var(--text-muted); }
+    .kpi-year { font-size: 0.6rem; color: var(--text-muted); margin-top: 2px; }
+
+    /* ── CHARTS ── */
+    .chart-wrap { position: relative; height: 240px; }
+    .chart-wrap.tall { height: 320px; }
+    .chart-wrap.short { height: 180px; }
+
+    /* ── SECTION HEADER ── */
+    .section-header {
+      display: flex; align-items: center; gap: 10px;
+      margin-bottom: 16px;
+    }
+    .section-header h2 {
+      font-size: 1rem; font-weight: 700; margin: 0;
+      color: var(--text-main);
+    }
+    .section-badge {
+      font-size: 0.62rem; padding: 2px 8px; border-radius: 20px;
+      font-weight: 600; letter-spacing: 0.5px;
+    }
+
+    /* ── TABLE ── */
+    .data-table { width: 100%; border-collapse: collapse; font-size: 0.78rem; }
+    .data-table th {
+      background: var(--bg-dark); color: var(--text-muted);
+      padding: 8px 10px; text-align: left; font-weight: 600;
+      border-bottom: 1px solid var(--border); white-space: nowrap;
+    }
+    .data-table td {
+      padding: 7px 10px; border-bottom: 1px solid var(--border);
+      color: var(--text-main);
+    }
+    .data-table tr:hover td { background: var(--bg-card2); }
+
+    /* ── AI PANEL ── */
+    .ai-header {
+      padding: 12px 14px;
+      background: linear-gradient(135deg, #001a4d, #003087);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; gap: 8px; cursor: pointer;
+    }
+    .ai-header h3 { font-size: 0.8rem; font-weight: 700; margin: 0; color: #fff; }
+    .ai-messages {
+      flex: 1; overflow-y: auto; padding: 12px;
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .msg {
+      padding: 10px 12px; border-radius: 8px;
+      font-size: 0.78rem; line-height: 1.5;
+    }
+    .msg.user {
+      background: var(--spvm-mid);
+      align-self: flex-end; max-width: 85%;
+      color: #fff;
+    }
+    .msg.ai {
+      background: var(--bg-card2); border: 1px solid var(--border);
+      align-self: flex-start; max-width: 100%;
+    }
+    .msg.ai strong { color: var(--spvm-accent); }
+    .ai-input-wrap {
+      padding: 10px; border-top: 1px solid var(--border);
+    }
+    .ai-input {
+      width: 100%; background: var(--bg-dark); border: 1px solid var(--border);
+      border-radius: 6px; color: var(--text-main); padding: 8px 10px;
+      font-size: 0.78rem; resize: none; outline: none;
+      font-family: inherit;
+    }
+    .ai-input:focus { border-color: var(--spvm-light); }
+    .btn-ai-send {
+      width: 100%; margin-top: 6px; background: var(--spvm-blue);
+      border: none; color: #fff; padding: 8px; border-radius: 6px;
+      font-size: 0.78rem; font-weight: 600; cursor: pointer;
+      transition: background .2s;
+    }
+    .btn-ai-send:hover { background: var(--spvm-light); }
+    .ai-quick-btns {
+      display: flex; flex-wrap: wrap; gap: 4px; padding: 8px 10px;
+      border-top: 1px solid var(--border);
+    }
+    .btn-quick {
+      background: var(--bg-dark); border: 1px solid var(--border);
+      color: var(--text-muted); padding: 4px 8px;
+      border-radius: 12px; font-size: 0.65rem; cursor: pointer;
+      transition: all .15s;
+    }
+    .btn-quick:hover { border-color: var(--spvm-accent); color: var(--spvm-accent); }
+
+    /* ── ALERT SIGNALS ── */
+    .signal {
+      display: flex; align-items: flex-start; gap: 10px;
+      padding: 10px 14px; border-radius: 8px; margin-bottom: 8px;
+      border-left: 3px solid;
+    }
+    .signal.rouge { background: rgba(192,57,43,.12); border-color: var(--spvm-red); }
+    .signal.orange { background: rgba(230,126,34,.12); border-color: #e67e22; }
+    .signal.jaune { background: rgba(243,156,18,.12); border-color: var(--spvm-accent); }
+    .signal.vert { background: rgba(39,174,96,.12); border-color: var(--spvm-green); }
+    .signal-label { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+    .signal-text { font-size: 0.76rem; color: var(--text-muted); margin-top: 2px; }
+
+    /* ── TABS CONTENT ── */
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    /* ── LOADING ── */
+    .spinner {
+      display: inline-block; width: 14px; height: 14px;
+      border: 2px solid var(--border); border-top-color: var(--spvm-accent);
+      border-radius: 50%; animation: spin .7s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── CORRELATION ── */
+    .corr-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; }
+    .corr-card {
+      background: var(--bg-card2); border: 1px solid var(--border);
+      border-radius: 8px; padding: 12px;
+    }
+    .corr-coef { font-size: 1.4rem; font-weight: 700; }
+    .corr-positive { color: var(--spvm-red); }
+    .corr-negative { color: var(--spvm-green); }
+    .corr-neutral { color: var(--text-muted); }
+    .corr-warning {
+      font-size: 0.6rem; color: var(--spvm-accent); margin-top: 4px;
+      font-style: italic;
+    }
+
+    /* ── CONSTAT CARDS (Analyse profonde) ── */
+    .constat-icon { font-size: 2rem; flex-shrink: 0; line-height: 1; margin-top: 3px; }
+    .constat-title { font-size: .9rem; font-weight: 700; color: var(--text-main); margin-bottom: 6px; }
+    .constat-finding { font-size: .82rem; color: var(--text-main); line-height: 1.6; margin-bottom: 7px; }
+    .constat-detail {
+      font-size: .68rem; color: var(--text-muted); margin-bottom: 5px;
+      font-family: 'Courier New', monospace; letter-spacing: .2px;
+    }
+    .constat-note { font-size: .67rem; color: var(--spvm-accent); font-style: italic; }
+    .bilan-item { display: flex; align-items: center; gap: 8px; padding: 9px 0; border-bottom: 1px solid var(--border); }
+    .bilan-item:last-child { border-bottom: none; }
+
+    /* ── PROJECTION ── */
+    .proj-badge {
+      display: inline-block; font-size: 0.6rem; padding: 1px 6px;
+      border-radius: 10px; font-weight: 700; margin-left: 6px;
+    }
+    .proj-badge.high { background: rgba(39,174,96,.2); color: var(--spvm-green); }
+    .proj-badge.med  { background: rgba(243,156,18,.2); color: var(--spvm-accent); }
+    .proj-badge.low  { background: rgba(192,57,43,.2);  color: var(--spvm-red); }
+
+    /* ── SCROLLBAR ── */
+    ::-webkit-scrollbar { width: 5px; height: 5px; }
+    ::-webkit-scrollbar-track { background: var(--bg-dark); }
+    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--spvm-light); }
+
+    /* ── MARKDOWN IN AI ── */
+    .msg.ai h3 { font-size: 0.85rem; color: var(--spvm-accent); margin: 8px 0 4px; }
+    .msg.ai h4 { font-size: 0.78rem; color: var(--text-main); margin: 6px 0 3px; }
+    .msg.ai ul { padding-left: 16px; margin: 4px 0; }
+    .msg.ai li { margin-bottom: 2px; }
+    .msg.ai code { background: var(--bg-dark); padding: 1px 4px; border-radius: 3px; font-size: 0.72rem; }
+    .msg.ai table { border-collapse: collapse; width: 100%; font-size: 0.7rem; margin: 6px 0; }
+    .msg.ai table th { background: var(--bg-dark); padding: 4px 8px; border: 1px solid var(--border); }
+    .msg.ai table td { padding: 3px 8px; border: 1px solid var(--border); }
+
+    /* ── YEAR FILTER ── */
+    .year-filter {
+      display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+      margin-bottom: 16px; padding: 10px 14px;
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+    .year-filter label { font-size: 0.72rem; color: var(--text-muted); }
+    select.year-sel {
+      background: var(--bg-dark); border: 1px solid var(--border);
+      color: var(--text-main); padding: 4px 8px; border-radius: 4px;
+      font-size: 0.75rem;
+    }
+
+    /* ── MAP ── */
+    #map-container { height: 500px; border-radius: 10px; overflow: hidden; border: 1px solid var(--border); }
+    .leaflet-popup-content-wrapper { background: var(--bg-card); color: var(--text-main); border: 1px solid var(--border); }
+    .leaflet-popup-tip { background: var(--bg-card); }
+    .map-popup-title { font-weight: 700; font-size: 0.9rem; color: var(--spvm-accent); margin-bottom: 6px; }
+    .map-popup-row { font-size: 0.72rem; display: flex; justify-content: space-between; gap: 12px; margin: 2px 0; }
+    .map-legend { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 10px; font-size: 0.72rem; }
+    .legend-item { display: flex; align-items: center; gap: 5px; }
+    .legend-dot { width: 12px; height: 12px; border-radius: 50%; }
+
+    /* ── ARRONDISSEMENT TABLE ── */
+    .arrond-bar { height: 6px; border-radius: 3px; background: var(--spvm-light); transition: width .4s; }
+    .risk-badge { font-size: 0.6rem; padding: 1px 6px; border-radius: 10px; font-weight: 700; }
+    .risk-high   { background: rgba(192,57,43,.25); color: #e74c3c; }
+    .risk-medium { background: rgba(243,156,18,.25); color: #f39c12; }
+    .risk-low    { background: rgba(39,174,96,.25);  color: #27ae60; }
+
+    /* ── AI LAYER SELECTOR ── */
+    .layer-selector { display: flex; gap: 4px; flex-wrap: wrap; padding: 8px 10px; border-bottom: 1px solid var(--border); }
+    .layer-btn { background: var(--bg-dark); border: 1px solid var(--border); color: var(--text-muted); padding: 3px 9px; border-radius: 12px; font-size: 0.65rem; cursor: pointer; transition: all .15s; }
+    .layer-btn.active { border-color: var(--spvm-accent); color: var(--spvm-accent); background: rgba(243,156,18,.1); }
+
+    /* ── CONFIDENCE ── */
+    .conf-a { color: var(--spvm-green); }
+    .conf-b { color: var(--spvm-accent); }
+    .conf-c { color: var(--spvm-red); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) { .ai-panel { display: none; } }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════════
+     HEADER
+══════════════════════════════════════════════════════════ -->
+<header class="app-header">
+  <div style="display:flex;align-items:center;gap:10px;flex:1">
+    <i class="fas fa-shield-halved" style="font-size:1.6rem;color:var(--spvm-accent)"></i>
+    <div>
+      <h1>SPVM INSIGHT <span class="badge-ai">IA</span></h1>
+      <div class="subtitle">Panel d'experts analytiques — Données officielles 2015–2024 — 38 indicateurs</div>
+    </div>
+  </div>
+  <div style="display:flex;align-items:center;gap:12px">
+    <div id="status-indicator" style="display:flex;align-items:center;gap:6px;font-size:0.72rem;color:var(--text-muted)">
+      <span class="spinner"></span> Chargement des données…
+    </div>
+    <button class="btn-quick" onclick="toggleAI()" style="padding:6px 12px">
+      <i class="fas fa-robot"></i> Expert IA
+    </button>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════════════════════════
+     NAVIGATION
+══════════════════════════════════════════════════════════ -->
+<nav class="main-nav">
+  <button class="active" onclick="showTab('overview',this)"><i class="fas fa-chart-line fa-sm me-1"></i>Vue d'ensemble</button>
+  <button onclick="showTab('personne',this)"><i class="fas fa-person-falling-burst fa-sm me-1"></i>Crimes Personne</button>
+  <button onclick="showTab('propriete',this)"><i class="fas fa-house-lock fa-sm me-1"></i>Crimes Propriété</button>
+  <button onclick="showTab('armes',this)"><i class="fas fa-gun fa-sm me-1"></i>Armes à feu</button>
+  <button onclick="showTab('operations',this)"><i class="fas fa-headset fa-sm me-1"></i>Opérations</button>
+  <button onclick="showTab('routier',this)"><i class="fas fa-car-burst fa-sm me-1"></i>Sécurité routière</button>
+  <button onclick="showTab('projections',this)"><i class="fas fa-chart-area fa-sm me-1"></i>Projections 2025–2027</button>
+  <button onclick="showTab('analyse',this)"><i class="fas fa-microscope fa-sm me-1"></i>Analyse profonde</button>
+  <button onclick="showTab('carte',this)"><i class="fas fa-map-location-dot fa-sm me-1"></i>Carte Arrondissements</button>
+  <button onclick="showTab('osint',this)"><i class="fas fa-satellite-dish fa-sm me-1"></i>OSINT</button>
+</nav>
+
+<!-- ══════════════════════════════════════════════════════════
+     BODY
+══════════════════════════════════════════════════════════ -->
+<div class="app-body">
+  <main class="main-content">
+
+    <!-- ════ OVERVIEW ════ -->
+    <div id="tab-overview" class="tab-content active">
+      <div class="section-header">
+        <i class="fas fa-chart-line" style="color:var(--spvm-accent)"></i>
+        <h2>Vue d'ensemble — Tous indicateurs</h2>
+        <span class="section-badge" style="background:rgba(0,48,135,.3);color:#7aadff">10 années • 38 indicateurs</span>
+      </div>
+
+      <div class="year-filter">
+        <label><i class="fas fa-filter me-1"></i>Période :</label>
+        <label>De</label>
+        <select class="year-sel" id="filterFrom" onchange="applyFilter()">
+          <option value="2015" selected>2015</option><option value="2016">2016</option>
+          <option value="2017">2017</option><option value="2018">2018</option>
+          <option value="2019">2019</option><option value="2020">2020</option>
+          <option value="2021">2021</option><option value="2022">2022</option>
+          <option value="2023">2023</option><option value="2024">2024</option>
+        </select>
+        <label>À</label>
+        <select class="year-sel" id="filterTo" onchange="applyFilter()">
+          <option value="2015">2015</option><option value="2016">2016</option>
+          <option value="2017">2017</option><option value="2018">2018</option>
+          <option value="2019">2019</option><option value="2020">2020</option>
+          <option value="2021">2021</option><option value="2022">2022</option>
+          <option value="2023">2023</option><option value="2024" selected>2024</option>
+        </select>
+        <span id="filter-info" style="font-size:.7rem;color:var(--spvm-accent);margin-left:8px"></span>
+        <span style="font-size:.65rem;color:var(--text-muted);margin-left:auto">
+          Conf. : <span class="conf-a">A=officiel</span> ·
+          <span class="conf-b">B=estimé</span> ·
+          <span class="conf-c">C=extrapolé</span>
+        </span>
+      </div>
+
+      <div id="signals-container" class="mb-3"></div>
+
+      <div class="card">
+        <div class="card-title"><i class="fas fa-gauge-high"></i>Indicateurs clés 2024 vs 2023</div>
+        <div id="kpi-main" class="kpi-grid"></div>
+      </div>
+
+      <div class="row g-3">
+        <div class="col-lg-8">
+          <div class="card">
+            <div class="card-title"><i class="fas fa-chart-line"></i>Évolution globale — Infractions Code criminel</div>
+            <div class="chart-wrap"><canvas id="chart-global-trend"></canvas></div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-title"><i class="fas fa-chart-pie"></i>Répartition 2024</div>
+            <div class="chart-wrap"><canvas id="chart-repartition"></canvas></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><i class="fas fa-layer-group"></i>Tableau comparatif complet — Tous indicateurs (2015→2024)</div>
+        <div style="overflow-x:auto"><table class="data-table" id="table-all"></table></div>
+      </div>
+    </div>
+
+    <!-- ════ CRIMES PERSONNE ════ -->
+    <div id="tab-personne" class="tab-content">
+      <div class="section-header">
+        <i class="fas fa-person-falling-burst" style="color:#e74c3c"></i>
+        <h2>Crimes contre la personne</h2>
+        <span class="section-badge" style="background:rgba(192,57,43,.2);color:#e74c3c">11 indicateurs</span>
+      </div>
+      <div class="card">
+        <div class="card-title"><i class="fas fa-gauge-high"></i>KPIs 2024 vs 2023</div>
+        <div id="kpi-personne" class="kpi-grid"></div>
+      </div>
+      <div class="row g-3">
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-title"><i class="fas fa-chart-bar"></i>Voies de fait, Agressions sexuelles & Harcèlement</div>
+            <div class="chart-wrap"><canvas id="chart-vdf"></canvas></div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-title"><i class="fas fa-skull-crossbones"></i>Homicides & Taux de résolution</div>
+            <div class="chart-wrap"><canvas id="chart-homicides"></canvas></div>
+          </div>
+        </div>
+      </div>
+      <div class="row g-3">
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-title"><i class="fas fa-heart-crack"></i>Violence conjugale — Appels de service</div>
+            <div class="chart-wrap"><canvas id="chart-viol-conj"></canvas></div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-title"><i class="fas fa-triangle-exclamation"></i>Vols qualifiés, Extorsion & Menaces</div>
+            <div class="chart-wrap"><canvas id="chart-vols-q"></canvas></div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title"><i class="fas fa-table"></i>Tableau complet — Crimes contre la personne</div>
+        <div style="overflow-x:auto"><table class="data-table" id="table-personne"></table></div>
+      </div>
+    </div>
+
+    <!-- ════ CRIMES PROPRIÉTÉ ════ -->
+    <div id="tab-propriete" class="tab-content">
+      <div class="section-header">
+        <i class="fas fa-house-lock" style="color:#e67e22"></i>
+        <h2>Crimes contre la propriété</h2>
+        <span class="section-badge" style="background:rgba(230,126,34,.2);color:#e67e22">8 indicateurs</span>
+      </div>
+      <div class="card">
+        <div class="card-title"><i class="fas fa-gauge-high"></i>KPIs 2024 vs 2023</div>
+        <div id="kpi-propriete" class="kpi-grid"></div>
+      </div>
+      <div class="row g-3">
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-title"><i class="fas fa-door-open"></i>Introductions par effraction</div>
+            <div class="chart-wrap"><canvas id="chart-intro"></canvas></div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-title"><i class="fas fa-car-on"></i>Vols de véhicules & Vols dans véhicules</div>
+            <div class="chart-wrap"><canvas id="chart-vols-veh"></canvas></div>
+          </div>
+        </div>
+      </div>
+      <div class="row g-3">
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-title"><i class="fas fa-credit-card"></i>Fraudes — Tendance 2015–2024</div>
+            <div class="chart-wrap"><canvas id="chart-fraudes"></canvas></div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-title"><i class="fas fa-spray-can-sparkles"></i>Méfaits, Vols simples & Alarmes fondées</div>
+            <div class="chart-wrap"><canvas id="chart-mesfaits"></canvas></div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title"><i class="fas fa-table"></i>Tableau complet — Crimes contre la propriété</div>
+        <div style="overflow-x:auto"><table class="data-table" id="table-propriete"></table></div>
+      </div>
+    </div>
+
+    <!-- ════ ARMES À FEU ════ -->
+    <div id="tab-armes" class="tab-content">
+      <div class="section-header">
+        <i class="fas fa-gun" style="color:#bb8fce"></i>
+        <h2>Armes à feu</h2>
+        <span class="section-badge" style="background:rgba(142,68,173,.2);color:#bb8fce">4 indicateurs</span>
+      </div>
+      <div class="card">
+        <div class="card-title"><i class="fas fa-gauge-high"></i>KPIs 2024 vs 2023</div>
+        <div id="kpi-armes" class="kpi-grid"></div>
+      </div>
+      <div class="row g-3">
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-title"><i class="fas fa-chart-bar"></i>Incidents & Infractions avec armes à feu</div>
+            <div class="chart-wrap"><canvas id="chart-armes1"></canvas></div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-title"><i class="fas fa-boxes-stacked"></i>Saisies d'armes à feu (2015–2024)</div>
+            <div class="chart-wrap"><canvas id="chart-saisies"></canvas></div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title"><i class="fas fa-link"></i>Analyse croisée — Homicides, incidents & saisies</div>
+        <div class="chart-wrap tall"><canvas id="chart-armes-cross"></canvas></div>
+      </div>
+    </div>
+
+    <!-- ════ OPÉRATIONS ════ -->
+    <div id="tab-operations" class="tab-content">
+      <div class="section-header">
+        <i class="fas fa-headset" style="color:#2ecc71"></i>
+        <h2>Opérations — 911, Effectifs & Arrestations</h2>
+        <span class="section-badge" style="background:rgba(46,204,113,.2);color:#2ecc71">8 indicateurs</span>
+      </div>
+      <div class="card">
+        <div class="card-title"><i class="fas fa-gauge-high"></i>KPIs 2024 vs 2023</div>
+        <div id="kpi-operations" class="kpi-grid"></div>
+      </div>
+      <div class="row g-3">
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-title"><i class="fas fa-phone-volume"></i>Appels 911 & Appels répartis SPVM</div>
+            <div class="chart-wrap"><canvas id="chart-911"></canvas></div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-title"><i class="fas fa-stopwatch"></i>Temps de réponse Priorité 1 (secondes)</div>
+            <div class="chart-wrap"><canvas id="chart-reponse"></canvas></div>
+          </div>
+        </div>
+      </div>
+      <div class="row g-3">
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-title"><i class="fas fa-user-shield"></i>Effectif policiers & Civil</div>
+            <div class="chart-wrap"><canvas id="chart-effectif"></canvas></div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-title"><i class="fas fa-handcuffs"></i>Arrestations — Adultes & Mineurs</div>
+            <div class="chart-wrap"><canvas id="chart-arrestations"></canvas></div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title"><i class="fas fa-table"></i>Tableau complet — Opérations</div>
+        <div style="overflow-x:auto"><table class="data-table" id="table-operations"></table></div>
+      </div>
+    </div>
+
+    <!-- ════ SÉCURITÉ ROUTIÈRE ════ -->
+    <div id="tab-routier" class="tab-content">
+      <div class="section-header">
+        <i class="fas fa-car-burst" style="color:#3498db"></i>
+        <h2>Sécurité routière</h2>
+        <span class="section-badge" style="background:rgba(52,152,219,.2);color:#3498db">5 indicateurs</span>
+      </div>
+      <div class="card">
+        <div class="card-title"><i class="fas fa-gauge-high"></i>KPIs 2024 vs 2023</div>
+        <div id="kpi-routier" class="kpi-grid"></div>
+      </div>
+      <div class="row g-3">
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-title"><i class="fas fa-chart-area"></i>Collisions totales & Mortelles</div>
+            <div class="chart-wrap"><canvas id="chart-collisions"></canvas></div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-title"><i class="fas fa-bed-pulse"></i>Décès & Blessés graves sur les routes</div>
+            <div class="chart-wrap"><canvas id="chart-decedes"></canvas></div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title"><i class="fas fa-ticket-simple"></i>Infractions au Code de la sécurité routière</div>
+        <div class="chart-wrap tall"><canvas id="chart-infractions-route"></canvas></div>
+      </div>
+    </div>
+
+    <!-- ════ PROJECTIONS ════ -->
+    <div id="tab-projections" class="tab-content">
+      <div class="section-header">
+        <i class="fas fa-chart-area" style="color:var(--spvm-accent)"></i>
+        <h2>Projections probabilistes 2025–2027</h2>
+        <span class="section-badge" style="background:rgba(243,156,18,.2);color:var(--spvm-accent)">⚠ Scénarios non prescriptifs</span>
+      </div>
+      <div class="signal orange" style="margin-bottom:16px">
+        <i class="fas fa-triangle-exclamation" style="color:#e67e22;margin-top:2px;font-size:1.1rem"></i>
+        <div>
+          <div class="signal-label">Mise en garde obligatoire — Gouvernance des données</div>
+          <div class="signal-text">Ces projections sont <strong>PROBABILISTES</strong>, fondées sur les tendances linéaires 2015–2024.
+          Elles ne constituent en aucun cas des prédictions certaines. Les variables exogènes (politique, économie, migrations, mutations sociales, interventions policières) peuvent modifier significativement toute trajectoire.
+          <strong>Validation humaine experte obligatoire avant toute décision opérationnelle ou budgétaire.</strong>
+          Corrélation ≠ Causalité.</div>
+        </div>
+      </div>
+      <div class="row g-3">
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-title"><i class="fas fa-chart-line"></i>Crimes contre la personne — 3 scénarios</div>
+            <div class="chart-wrap tall"><canvas id="chart-proj-personne"></canvas></div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-title"><i class="fas fa-chart-line"></i>Crimes contre la propriété — 3 scénarios</div>
+            <div class="chart-wrap tall"><canvas id="chart-proj-propriete"></canvas></div>
+          </div>
+        </div>
+      </div>
+      <div class="card mt-2">
+        <div class="card-title"><i class="fas fa-table"></i>Tableau des projections — Pessimiste / Tendanciel / Optimiste</div>
+        <div style="overflow-x:auto"><table class="data-table" id="table-projections"></table></div>
+      </div>
+    </div>
+
+    <!-- ════ ANALYSE PROFONDE ════ -->
+    <div id="tab-analyse" class="tab-content">
+
+      <!-- En-tête -->
+      <div class="section-header">
+        <i class="fas fa-lightbulb" style="color:#9b59b6"></i>
+        <h2>Ce que 10 ans de données révèlent</h2>
+        <span class="section-badge" style="background:rgba(155,89,182,.2);color:#9b59b6">6 constats · SPVM 2015–2024</span>
+      </div>
+
+      <!-- 6 constats clés -->
+      <div id="constats-grid"></div>
+
+      <!-- Bilan décennie : ce qui monte vs ce qui baisse -->
+      <div class="row g-3 mb-3">
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div class="card-title">
+              <i class="fas fa-arrow-trend-up" style="color:var(--spvm-red)"></i>Ce qui s'est aggravé — hausse sur 10 ans
+            </div>
+            <div id="aggrave-list"></div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div class="card-title">
+              <i class="fas fa-arrow-trend-down" style="color:var(--spvm-green)"></i>Ce qui s'est amélioré — baisse sur 10 ans
+            </div>
+            <div id="ameliore-list"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Impact COVID -->
+      <div class="card">
+        <div class="card-title"><i class="fas fa-virus"></i>Comment la pandémie COVID-19 a tout bouleversé (2018–2024)</div>
+        <div class="signal jaune" style="margin-bottom:12px">
+          <i class="fas fa-info-circle" style="color:var(--spvm-accent);margin-top:2px"></i>
+          <div>
+            <div class="signal-text">
+              Chaque courbe montre l'évolution d'un indicateur <strong>par rapport à 2019 (avant la pandémie)</strong>.
+              Valeur 100 = niveau de 2019. Valeur 150 = +50% vs 2019. Valeur 70 = −30% vs 2019.
+            </div>
+          </div>
+        </div>
+        <div class="chart-wrap tall"><canvas id="chart-covid"></canvas></div>
+      </div>
+
+    </div>
+
+    <!-- ════ CARTE ARRONDISSEMENTS ════ -->
+    <div id="tab-carte" class="tab-content">
+      <div class="section-header">
+        <i class="fas fa-map-location-dot" style="color:var(--spvm-accent)"></i>
+        <h2>Carte — Criminalité par arrondissement</h2>
+        <span class="section-badge" style="background:rgba(0,48,135,.3);color:#7aadff">Données temps réel MTL Open Data 2020–2024</span>
+      </div>
+
+      <div class="row g-3 mb-3">
+        <div class="col-md-4">
+          <div class="year-filter">
+            <label><i class="fas fa-filter me-1"></i>Année :</label>
+            <select class="year-sel" id="map-year-filter" onchange="renderMap()">
+              <option value="all">Toutes (2020–2024)</option>
+              <option value="2024">2024</option>
+              <option value="2023">2023</option>
+              <option value="2022">2022</option>
+              <option value="2021">2021</option>
+              <option value="2020">2020</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="year-filter">
+            <label><i class="fas fa-crosshairs me-1"></i>Catégorie :</label>
+            <select class="year-sel" id="map-cat-filter" onchange="renderMap()">
+              <option value="all">Toutes catégories</option>
+              <option value="vols_vehicules">Vols de véhicules</option>
+              <option value="introductions_effraction">Introductions par effraction</option>
+              <option value="vols_qualifies">Vols qualifiés</option>
+              <option value="vols_dans_vehicules">Vols dans véhicules</option>
+              <option value="mesfaits">Méfaits</option>
+              <option value="homicides">Infractions mortelles</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="year-filter">
+            <label><i class="fas fa-chart-bar me-1"></i>Vue :</label>
+            <select class="year-sel" id="map-view-mode" onchange="renderMap()">
+              <option value="absolute">Volume absolu</option>
+              <option value="per_capita">Taux / 1000 hab</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div id="map-container"></div>
+        <div class="map-legend" id="map-legend"></div>
+      </div>
+
+      <div class="card mt-3">
+        <div class="card-title"><i class="fas fa-table"></i>Classement par arrondissement</div>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Arrondissement</th>
+                <th>Crimes (total)</th>
+                <th>Moy. annuelle</th>
+                <th>Taux /1000 hab</th>
+                <th>Top crime</th>
+                <th>Évolution 2020→2024</th>
+                <th>OSINT risk</th>
+              </tr>
+            </thead>
+            <tbody id="arrond-table-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ════ OSINT ════ -->
+    <div id="tab-osint" class="tab-content">
+      <div class="section-header">
+        <i class="fas fa-satellite-dish" style="color:var(--spvm-accent)"></i>
+        <h2>OSINT — Contexte socio-économique par arrondissement</h2>
+        <span class="section-badge" style="background:rgba(39,174,96,.2);color:#27ae60">StatsCan 2021 • Open Data MTL</span>
+      </div>
+
+      <div class="row g-3 mb-3">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-title"><i class="fas fa-info-circle"></i>Corrélation Crime–Socio-Économie</div>
+            <div class="row g-3">
+              <div class="col-md-4">
+                <div class="corr-card">
+                  <div style="font-size:0.7rem;color:var(--text-muted)">Revenu médian ↔ Taux criminalité</div>
+                  <div class="corr-coef corr-negative" id="corr-revenu">—</div>
+                  <div class="corr-warning">Corrélation négative probable</div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="corr-card">
+                  <div style="font-size:0.7rem;color:var(--text-muted)">Taux chômage ↔ Taux criminalité</div>
+                  <div class="corr-coef corr-positive" id="corr-chomage">—</div>
+                  <div class="corr-warning">Corrélation positive probable</div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="corr-card">
+                  <div style="font-size:0.7rem;color:var(--text-muted)">Densité pop. ↔ Taux criminalité</div>
+                  <div class="corr-coef" id="corr-densite">—</div>
+                  <div class="corr-warning">Relation non-linéaire</div>
+                </div>
+              </div>
+            </div>
+            <p style="font-size:0.65rem;color:var(--text-muted);margin-top:10px;font-style:italic">
+              ⚠ Corrélation ≠ Causalité. Ces coefficients sont calculés sur {n} arrondissements avec données disponibles.
+              Des facteurs confondants non mesurés peuvent expliquer ces relations.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div id="osint-cards-container" class="row g-3"></div>
+    </div>
+
+  </main>
+
+  <!-- ══════════════════════════════════════════════════════
+       AI PANEL
+  ══════════════════════════════════════════════════════ -->
+  <aside class="ai-panel" id="aiPanel">
+    <div class="ai-header" onclick="toggleAI()">
+      <i class="fas fa-robot" style="color:var(--spvm-accent)"></i>
+      <h3>Panel d'experts IA — 15 spécialistes</h3>
+      <i class="fas fa-chevron-right" style="margin-left:auto;font-size:.7rem;color:#a8c7fa" id="aiChevron"></i>
+    </div>
+    <div class="layer-selector" title="Couche d'analyse IA active">
+      <span style="font-size:0.62rem;color:var(--text-muted);width:100%">Couche d'analyse :</span>
+      <button class="layer-btn active" data-mode="standard" onclick="setAILayer(this)">Standard</button>
+      <button class="layer-btn" data-mode="spatial" onclick="setAILayer(this)">Spatial</button>
+      <button class="layer-btn" data-mode="temporal" onclick="setAILayer(this)">Temporel</button>
+      <button class="layer-btn" data-mode="predictive" onclick="setAILayer(this)">Prospectif</button>
+      <button class="layer-btn" data-mode="comparative" onclick="setAILayer(this)">Comparatif</button>
+      <button class="layer-btn" data-mode="osint" onclick="setAILayer(this)">OSINT</button>
+    </div>
+    <div id="ai-messages" class="ai-messages">
+      <div class="msg ai">
+        <strong>Panel d'experts SPVM INSIGHT</strong><br><br>
+        Bonjour. Je suis votre panel analytique multidisciplinaire — 15 experts intégrés en criminologie, statistiques, sécurité publique, géomatique, jurisprudence et prospective.<br><br>
+        J'ai accès aux <strong>données réelles</strong> SPVM 2015–2024 (38 indicateurs) + <strong>données temps réel MTL Open Data</strong> (152K incidents géolocalisés par arrondissement, 2020–2024) + <strong>contexte OSINT</strong> socio-économique par arrondissement.<br><br>
+        Utilisez les <strong>couches d'analyse</strong> pour cibler : Spatial (par arrondissement), Temporel (tendances), Prospectif (scénarios 2025-2030), Comparatif (benchmarks), OSINT (corrélations socio-éco).
+      </div>
+    </div>
+    <div class="ai-quick-btns">
+      <button class="btn-quick" onclick="quickAsk('Quelles sont les tendances les plus préoccupantes des 5 dernières années ? Analysez en profondeur.')">📊 Tendances 5 ans</button>
+      <button class="btn-quick" onclick="quickAsk('Faites une analyse comparative de l\'impact COVID-19 sur la criminalité montréalaise 2020-2021 vs tendances pré-pandémie.')">🦠 Impact COVID</button>
+      <button class="btn-quick" onclick="quickAsk('Analysez en profondeur l\'évolution des vols de véhicules 2015-2024. Hypothèses explicatives, corrélations, projections.')">🚗 Vols véhicules</button>
+      <button class="btn-quick" onclick="quickAsk('Quelles sont vos projections probabilistes pour 2025-2027 sur les principaux indicateurs de criminalité ? Trois scénarios.')">🔮 Projections 2025</button>
+      <button class="btn-quick" onclick="quickAsk('Produisez un briefing exécutif complet pour les gestionnaires du SPVM : bilan 2024, tendances clés, signaux à surveiller, recommandations.')">📋 Briefing exécutif</button>
+      <button class="btn-quick" onclick="quickAsk('Analysez la corrélation entre la baisse des effectifs policiers et la hausse des crimes. Quelles conclusions peut-on tirer avec prudence ?')">🔗 Effectifs vs crimes</button>
+      <button class="btn-quick" onclick="quickAsk('Quels signaux faibles détectez-vous dans les données SPVM 2015-2024 qui méritent une attention particulière des gestionnaires ?')">⚠ Signaux faibles</button>
+      <button class="btn-quick" onclick="quickAsk('Analysez l\'évolution des crimes haineux et donnez le contexte, les limites des données et les recommandations.')">🎯 Crimes haineux</button>
+    </div>
+    <div class="ai-input-wrap">
+      <textarea id="ai-input" class="ai-input" rows="3"
+        placeholder="Ex: Analysez la hausse des agressions sexuelles depuis 2019…"></textarea>
+      <button class="btn-ai-send" onclick="sendAI()">
+        <i class="fas fa-paper-plane me-1"></i>Analyser avec le panel d'experts
+      </button>
+    </div>
+  </aside>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+// ════════════════════════════════════════════════════════════════════════
+//  GLOBAL STATE
+// ════════════════════════════════════════════════════════════════════════
+let DS = null;
+const YEARS = ['2015','2016','2017','2018','2019','2020','2021','2022','2023','2024'];
+const CHARTS = {};
+let aiOpen = true;
+
+Chart.defaults.color          = '#8b949e';
+Chart.defaults.borderColor    = '#30363d';
+Chart.defaults.font.family    = "'Segoe UI', system-ui, sans-serif";
+Chart.defaults.font.size      = 11;
+
+const COLORS = [
+  '#2e86c1','#e74c3c','#2ecc71','#f39c12','#9b59b6',
+  '#1abc9c','#e67e22','#3498db','#e91e63','#00bcd4',
+  '#8bc34a','#ff5722','#607d8b','#795548','#ffc107'
+];
+
+// ════════════════════════════════════════════════════════════════════════
+//  DATA LOADING
+// ════════════════════════════════════════════════════════════════════════
+async function loadData() {
+  try {
+    const r = await fetch('/data/dataset.json');
+    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+    DS = await r.json();
+    setStatus(true, `38 indicateurs chargés — SPVM 2015–2024`);
+    buildAll();
+  } catch(e) {
+    setStatus(false, `Erreur chargement: ${e.message}`);
+    console.error(e);
+  }
+}
+function setStatus(ok, msg) {
+  document.getElementById('status-indicator').innerHTML =
+    `<i class="fas fa-circle" style="color:var(--spvm-${ok?'green':'red'});font-size:.5rem"></i>
+     <span style="color:var(--spvm-${ok?'green':'red'})">${msg}</span>`;
+}
+
+// ════════════════════════════════════════════════════════════════════════
+//  HELPERS
+// ════════════════════════════════════════════════════════════════════════
+const getV = (k,y) => DS[k]?.data?.[y] ?? 0;
+const getVals = (k,ys) => ys.map(y=>getV(k,y));
+const getYears = (f,t) => YEARS.filter(y=>+y>=+f&&+y<=+t);
+const pct = (a,b) => b ? ((a-b)/b*100).toFixed(1) : '0.0';
+const fmt = n => (n===undefined||n===null) ? '—' : (+n).toLocaleString('fr-CA');
+
+function pearson(xs,ys) {
+  const n=xs.length, mx=xs.reduce((a,b)=>a+b,0)/n, my=ys.reduce((a,b)=>a+b,0)/n;
+  const num=xs.map((x,i)=>(x-mx)*(ys[i]-my)).reduce((a,b)=>a+b,0);
+  const den=Math.sqrt(xs.map(x=>(x-mx)**2).reduce((a,b)=>a+b,0)*ys.map(y=>(y-my)**2).reduce((a,b)=>a+b,0));
+  return den ? (num/den).toFixed(3) : '0.000';
+}
+function trendSlope(vals) {
+  const n=vals.length, xs=[...Array(n)].map((_,i)=>i);
+  const mx=xs.reduce((a,b)=>a+b,0)/n, my=vals.reduce((a,b)=>a+b,0)/n;
+  const num=xs.map((x,i)=>(x-mx)*(vals[i]-my)).reduce((a,b)=>a+b,0);
+  const den=xs.map(x=>(x-mx)**2).reduce((a,b)=>a+b,0);
+  return den ? num/den : 0;
+}
+function projectLinear(vals, steps) {
+  const s=trendSlope(vals), last=vals[vals.length-1];
+  return Array.from({length:steps},(_,i)=>Math.max(0,Math.round(last+s*(i+1))));
+}
+function mkChart(id,cfg) {
+  if (CHARTS[id]) { CHARTS[id].destroy(); delete CHARTS[id]; }
+  const ctx = document.getElementById(id)?.getContext('2d');
+  if (!ctx) return;
+  CHARTS[id] = new Chart(ctx, cfg);
+}
+function chartOpts(yLabel, extraOpts={}) {
+  return Object.assign({
+    responsive:true, maintainAspectRatio:false,
+    interaction:{mode:'index',intersect:false},
+    plugins:{
+      legend:{labels:{boxWidth:9,usePointStyle:true,padding:7}},
+      tooltip:{backgroundColor:'#1c2333',titleColor:'#e6edf3',bodyColor:'#8b949e',borderColor:'#30363d',borderWidth:1}
+    },
+    scales:{
+      x:{grid:{color:'rgba(48,54,61,.4)'},ticks:{maxRotation:0}},
+      y:{grid:{color:'rgba(48,54,61,.4)'},title:{display:!!yLabel,text:yLabel,color:'#8b949e'}}
+    }
+  }, extraOpts);
+}
+function buildTableHTML(keys) {
+  let html=`<thead><tr><th>Indicateur</th>${YEARS.map(y=>`<th>${y}</th>`).join('')}<th>Δ 2015→2024</th></tr></thead><tbody>`;
+  for (const key of keys) {
+    const m=DS[key]; if(!m) continue;
+    const vals=YEARS.map(y=>getV(key,y));
+    const chg=vals[0]?((vals[9]-vals[0])/vals[0]*100).toFixed(1):'—';
+    const chgN=+chg;
+    const cc=isNaN(chgN)?'':chgN>15?'color:var(--spvm-red)':chgN<-15?'color:var(--spvm-green)':'color:var(--text-muted)';
+    const cf=(m.source_confidence||'B').toLowerCase();
+    html+=`<tr><td style="padding-left:16px">${m.label||key} <span class="conf-${cf}" style="font-size:.6rem">(${cf.toUpperCase()})</span></td>${vals.map(v=>`<td>${fmt(v)}</td>`).join('')}<td style="${cc};font-weight:600">${isNaN(chgN)?chg:(chgN>0?'+':'')+chg+'%'}</td></tr>`;
+  }
+  return html+'</tbody>';
+}
+function buildKPIs(id, defs, yr, prev) {
+  const c=document.getElementById(id); if(!c||!DS) return;
+  c.innerHTML = defs.map(({key,label,unit,inv})=>{
+    const curr=getV(key,yr), p=getV(key,prev);
+    const chg=p?((curr-p)/p*100):0;
+    const up=chg>0, bad=inv?up:!up;
+    const cls=Math.abs(chg)<0.5?'trend-neutral':(bad?(up?'trend-up-bad':'trend-down-bad'):(up?'trend-up-good':'trend-down-good'));
+    const arrow=Math.abs(chg)<0.5?'→':(up?'↑':'↓');
+    const color=bad?(Math.abs(chg)>10?'var(--spvm-red)':'#e67e22'):(Math.abs(chg)>5?'var(--spvm-green)':'var(--spvm-light)');
+    const cf=(DS[key]?.source_confidence||'B').toLowerCase();
+    return `<div class="kpi-card" style="--kpi-color:${color}">
+      <div class="kpi-label">${label} <span class="conf-${cf}">(${cf.toUpperCase()})</span></div>
+      <div class="kpi-value">${fmt(curr)}${unit||''}</div>
+      <div class="kpi-trend ${cls}">${arrow} ${chg>0?'+':''}${chg.toFixed(1)}% vs ${prev}</div>
+      <div class="kpi-year">Données ${yr}</div>
+    </div>`;
+  }).join('');
+}
+
+// ════════════════════════════════════════════════════════════════════════
+//  NAVIGATION
+// ════════════════════════════════════════════════════════════════════════
+function showTab(id, btn) {
+  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.main-nav button').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+id)?.classList.add('active');
+  btn?.classList.add('active');
+  if (DS) buildTab(id);
+}
+function buildTab(id) {
+  ({overview:buildOverview,personne:buildPersonne,propriete:buildPropriete,
+    armes:buildArmes,operations:buildOperations,routier:buildRoutier,
+    projections:buildProjections,analyse:buildAnalyse}[id] || (()=>{}))();
+}
+function applyFilter() {
+  if (!DS) return;
+  const f=document.getElementById('filterFrom').value;
+  const t=document.getElementById('filterTo').value;
+  document.getElementById('filter-info').textContent=`${+t-+f+1} années`;
+  buildOverview();
+}
+function buildAll() { buildOverview(); }
+
+// ════════════════════════════════════════════════════════════════════════
+//  OVERVIEW
+// ════════════════════════════════════════════════════════════════════════
+function buildOverview() {
+  const from=document.getElementById('filterFrom').value;
+  const to=document.getElementById('filterTo').value;
+  const years=getYears(from,to);
+  const prev=String(+to-1);
+
+  // Signals
+  const sigs=[];
+  const cp24=getV('crimes_personne_total','2024'), cp19=getV('crimes_personne_total','2019');
+  if (+pct(cp24,cp19)>30) sigs.push({level:'rouge',icon:'fas fa-arrow-trend-up',label:'🔴 SIGNAL MAJEUR',
+    text:`Crimes contre la personne : +${pct(cp24,cp19)}% depuis 2019 (${fmt(cp24)} vs ${fmt(cp19)}). Tendance à la hausse soutenue sur 5 ans.`});
+  const vv24=getV('vols_vehicules','2024'), vv19=getV('vols_vehicules','2019');
+  if (+pct(vv24,vv19)>20) sigs.push({level:'orange',icon:'fas fa-car',label:'🟠 TENDANCE PRÉOCCUPANTE',
+    text:`Vols de véhicules : ${fmt(vv24)} en 2024 vs ${fmt(vv19)} en 2019 (+${pct(vv24,vv19)}%). Hausse continue post-pandémie.`});
+  const vdv24=getV('vols_dans_vehicules','2024'), vdv19=getV('vols_dans_vehicules','2019');
+  if (+pct(vdv24,vdv19)>80) sigs.push({level:'rouge',icon:'fas fa-door-open',label:'🔴 SIGNAL MAJEUR',
+    text:`Vols dans les véhicules : +${pct(vdv24,vdv19)}% depuis 2019 (${fmt(vdv24)} vs ${fmt(vdv19)}). Explosion post-pandémie.`});
+  const eff24=getV('effectif_policiers','2024'), eff15=getV('effectif_policiers','2015');
+  if (eff24<eff15) sigs.push({level:'jaune',icon:'fas fa-user-minus',label:'🟡 SIGNAL OPÉRATIONNEL',
+    text:`Effectif policiers en baisse : ${fmt(eff24)} postes en 2024 vs ${fmt(eff15)} en 2015 (${pct(eff24,eff15)}%). Contexte de hausse de la criminalité.`});
+  const tr24=getV('taux_resolution_meurtres','2024');
+  if (tr24>=80) sigs.push({level:'vert',icon:'fas fa-check-circle',label:'✅ RÉSULTAT POSITIF',
+    text:`Taux de résolution des meurtres : ${tr24}% en 2024 — plus haut niveau de la décennie.`});
+  const af24=getV('incidents_armes_feu','2024'), af20=getV('incidents_armes_feu','2020');
+  if (af24<af20*0.5) sigs.push({level:'vert',icon:'fas fa-gun',label:'✅ AMÉLIORATION SIGNIFICATIVE',
+    text:`Incidents armes à feu : ${fmt(af24)} en 2024 vs ${fmt(af20)} en 2020 (−${Math.abs(pct(af24,af20))}%). Réduction notable.`});
+
+  document.getElementById('signals-container').innerHTML=sigs.map(s=>
+    `<div class="signal ${s.level}"><i class="${s.icon}" style="margin-top:2px"></i>
+     <div><div class="signal-label">${s.label}</div><div class="signal-text">${s.text}</div></div></div>`).join('');
+
+  // KPIs
+  buildKPIs('kpi-main', [
+    {key:'total_code_criminel',label:'Total infractions CC',inv:true},
+    {key:'crimes_personne_total',label:'Crimes contre la personne',inv:true},
+    {key:'crimes_propriete_total',label:'Crimes contre la propriété',inv:true},
+    {key:'homicides',label:'Meurtres',inv:true},
+    {key:'vols_vehicules',label:'Vols véhicules',inv:true},
+    {key:'voies_de_fait',label:'Voies de fait',inv:true},
+    {key:'agressions_sexuelles',label:'Agressions sexuelles',inv:true},
+    {key:'appels_repartis_spvm',label:'Appels répartis SPVM',inv:true},
+    {key:'effectif_policiers',label:'Effectif policiers',inv:false},
+    {key:'taux_resolution_meurtres',label:'Taux résolution meurtres',unit:'%',inv:false},
+    {key:'saisies_armes_feu',label:'Saisies armes à feu',inv:false},
+    {key:'crimes_haineux',label:'Crimes haineux',inv:true},
+  ], to, prev);
+
+  // Global trend
+  mkChart('chart-global-trend', {type:'line',data:{labels:years,datasets:[
+    {label:'Total CC',data:getVals('total_code_criminel',years),borderColor:'#2e86c1',backgroundColor:'rgba(46,134,193,.1)',borderWidth:2,tension:.3,fill:true,pointRadius:3},
+    {label:'Crimes personne',data:getVals('crimes_personne_total',years),borderColor:'#e74c3c',backgroundColor:'rgba(231,76,60,.08)',borderWidth:2,tension:.3,fill:true,pointRadius:3},
+    {label:'Crimes propriété',data:getVals('crimes_propriete_total',years),borderColor:'#f39c12',backgroundColor:'rgba(243,156,18,.08)',borderWidth:2,tension:.3,fill:true,pointRadius:3},
+  ]},options:chartOpts('Infractions')});
+
+  // Doughnut
+  const lat=to;
+  const prop=getV('crimes_propriete_total',lat), pers=getV('crimes_personne_total',lat);
+  const total=getV('total_code_criminel',lat);
+  const autres=Math.max(0,total-prop-pers-getV('fraudes',lat));
+  mkChart('chart-repartition',{type:'doughnut',data:{
+    labels:['Crimes personne','Crimes propriété','Fraudes','Autres CC'],
+    datasets:[{data:[pers,prop,getV('fraudes',lat),autres],
+      backgroundColor:['#e74c3c','#f39c12','#9b59b6','#607d8b'],
+      borderColor:'#161b22',borderWidth:2}]
+  },options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'right',labels:{boxWidth:9,font:{size:10}}}}}});
+
+  // All table
+  const cats=[
+    {group:'Criminalité globale',keys:['total_code_criminel','total_global']},
+    {group:'Crimes contre la personne',keys:['crimes_personne_total','homicides','tentatives_meurtre','voies_de_fait','agressions_sexuelles','vols_qualifies','extorsion','menaces','harcelement_criminel','violence_conjugale_appels','taux_resolution_meurtres']},
+    {group:'Crimes contre la propriété',keys:['crimes_propriete_total','introductions_effraction','vols_vehicules','vols_dans_vehicules','vols_simples','mesfaits','fraudes','alarmes_fondees']},
+    {group:'Armes à feu',keys:['crimes_armes_feu','saisies_armes_feu','incidents_armes_feu','homicides_armes_feu']},
+    {group:'Opérations & Effectifs',keys:['appels_911_total','appels_repartis_spvm','temps_reponse_priorite1','effectif_policiers','effectif_civil','arrestations_code_criminel','arrestations_mineurs','alarmes_fondees']},
+    {group:'Sécurité routière',keys:['collisions_total','collisions_mortelles','decedes_route','blesses_graves_route','infractions_routieres']},
+    {group:'Autres',keys:['crimes_haineux']},
+  ];
+  let html=`<thead><tr><th>Indicateur</th>${years.map(y=>`<th>${y}</th>`).join('')}<th>Δ ${years[0]}→${years[years.length-1]}</th></tr></thead><tbody>`;
+  for (const {group,keys} of cats) {
+    html+=`<tr><td colspan="${years.length+2}" style="background:#0d1117;color:var(--spvm-accent);font-weight:700;padding:10px;font-size:.75rem">${group}</td></tr>`;
+    for (const key of keys) {
+      const m=DS[key]; if(!m) continue;
+      const vals=years.map(y=>getV(key,y));
+      const first=vals[0],last=vals[vals.length-1];
+      const chg=first?((last-first)/first*100).toFixed(1):'—';
+      const cn=+chg;
+      const cc=isNaN(cn)?'':cn>15?'color:var(--spvm-red)':cn<-15?'color:var(--spvm-green)':'';
+      const cf=(m.source_confidence||'B').toLowerCase();
+      html+=`<tr><td style="padding-left:18px">${m.label||key} <span class="conf-${cf}" style="font-size:.6rem">(${cf.toUpperCase()})</span></td>${vals.map(v=>`<td>${fmt(v)}</td>`).join('')}<td style="${cc};font-weight:600">${isNaN(cn)?chg:(cn>0?'+':'')+chg+'%'}</td></tr>`;
+    }
+  }
+  html+='</tbody>';
+  document.getElementById('table-all').innerHTML=html;
+}
+
+// ════════════════════════════════════════════════════════════════════════
+//  CRIMES PERSONNE
+// ════════════════════════════════════════════════════════════════════════
+function buildPersonne() {
+  buildKPIs('kpi-personne',[
+    {key:'crimes_personne_total',label:'Total crimes personne',inv:true},
+    {key:'homicides',label:'Meurtres',inv:true},
+    {key:'tentatives_meurtre',label:'Tentatives meurtre',inv:true},
+    {key:'voies_de_fait',label:'Voies de fait',inv:true},
+    {key:'agressions_sexuelles',label:'Agressions sexuelles',inv:true},
+    {key:'vols_qualifies',label:'Vols qualifiés',inv:true},
+    {key:'extorsion',label:'Extorsion',inv:true},
+    {key:'menaces',label:'Menaces',inv:true},
+    {key:'harcelement_criminel',label:'Harcèlement criminel',inv:true},
+    {key:'violence_conjugale_appels',label:'Violence conjugale (appels)',inv:true},
+    {key:'taux_resolution_meurtres',label:'Taux résolution',unit:'%',inv:false},
+  ],'2024','2023');
+
+  mkChart('chart-vdf',{type:'line',data:{labels:YEARS,datasets:[
+    {label:'Voies de fait',data:getVals('voies_de_fait',YEARS),borderColor:'#e74c3c',backgroundColor:'rgba(231,76,60,.1)',borderWidth:2,tension:.3,fill:true,pointRadius:3},
+    {label:'Agressions sexuelles',data:getVals('agressions_sexuelles',YEARS),borderColor:'#9b59b6',borderWidth:2,tension:.3,pointRadius:3},
+    {label:'Harcèlement criminel',data:getVals('harcelement_criminel',YEARS),borderColor:'#e67e22',borderWidth:2,tension:.3,pointRadius:3},
+  ]},options:chartOpts('Infractions')});
+
+  mkChart('chart-homicides',{type:'bar',data:{labels:YEARS,datasets:[
+    {label:'Homicides',data:getVals('homicides',YEARS),backgroundColor:'rgba(192,57,43,.7)',borderColor:'#c0392b',borderWidth:1,yAxisID:'y'},
+    {label:'Taux résolution (%)',type:'line',data:getVals('taux_resolution_meurtres',YEARS),borderColor:'#2ecc71',backgroundColor:'transparent',borderWidth:2,tension:.3,pointRadius:4,yAxisID:'y2'},
+  ]},options:{...chartOpts(),...{scales:{
+    y:{position:'left',grid:{color:'#30363d'},title:{display:true,text:'Homicides',color:'#8b949e'}},
+    y2:{position:'right',grid:{display:false},title:{display:true,text:'Taux rés. (%)',color:'#8b949e'},min:0,max:100}}}}});
+
+  mkChart('chart-viol-conj',{type:'bar',data:{labels:YEARS,datasets:[
+    {label:'Appels violence conjugale',data:getVals('violence_conjugale_appels',YEARS),backgroundColor:'rgba(231,76,60,.5)',borderColor:'#e74c3c',borderWidth:1},
+  ]},options:chartOpts('Appels de service')});
+
+  mkChart('chart-vols-q',{type:'line',data:{labels:YEARS,datasets:[
+    {label:'Vols qualifiés',data:getVals('vols_qualifies',YEARS),borderColor:'#f39c12',borderWidth:2,tension:.3,pointRadius:3},
+    {label:'Extorsion',data:getVals('extorsion',YEARS),borderColor:'#e74c3c',borderWidth:2,tension:.3,pointRadius:3},
+    {label:'Menaces',data:getVals('menaces',YEARS),borderColor:'#9b59b6',borderWidth:2,tension:.3,pointRadius:3},
+  ]},options:chartOpts('Infractions')});
+
+  document.getElementById('table-personne').innerHTML=buildTableHTML([
+    'homicides','tentatives_meurtre','voies_de_fait','agressions_sexuelles',
+    'vols_qualifies','extorsion','menaces','harcelement_criminel',
+    'violence_conjugale_appels','crimes_personne_total','taux_resolution_meurtres'
+  ]);
+}
+
+// ════════════════════════════════════════════════════════════════════════
+//  CRIMES PROPRIÉTÉ
+// ════════════════════════════════════════════════════════════════════════
+function buildPropriete() {
+  buildKPIs('kpi-propriete',[
+    {key:'crimes_propriete_total',label:'Total crimes propriété',inv:true},
+    {key:'introductions_effraction',label:'Introductions effraction',inv:true},
+    {key:'vols_vehicules',label:'Vols véhicules à moteur',inv:true},
+    {key:'vols_dans_vehicules',label:'Vols dans les véhicules',inv:true},
+    {key:'vols_simples',label:'Vols simples',inv:true},
+    {key:'mesfaits',label:'Méfaits',inv:true},
+    {key:'fraudes',label:'Fraudes',inv:true},
+    {key:'alarmes_fondees',label:'Alarmes fondées',inv:true},
+  ],'2024','2023');
+
+  mkChart('chart-intro',{type:'line',data:{labels:YEARS,datasets:[
+    {label:'Introductions par effraction',data:getVals('introductions_effraction',YEARS),borderColor:'#e67e22',backgroundColor:'rgba(230,126,34,.1)',borderWidth:2,tension:.3,fill:true,pointRadius:3},
+  ]},options:chartOpts('Infractions')});
+
+  mkChart('chart-vols-veh',{type:'line',data:{labels:YEARS,datasets:[
+    {label:'Vols de véhicules',data:getVals('vols_vehicules',YEARS),borderColor:'#3498db',backgroundColor:'rgba(52,152,219,.08)',borderWidth:2,tension:.3,fill:true,pointRadius:3},
+    {label:'Vols dans les véhicules',data:getVals('vols_dans_vehicules',YEARS),borderColor:'#e74c3c',backgroundColor:'rgba(231,76,60,.08)',borderWidth:2,tension:.3,fill:true,pointRadius:3},
+  ]},options:chartOpts('Infractions')});
+
+  mkChart('chart-fraudes',{type:'bar',data:{labels:YEARS,datasets:[
+    {label:'Fraudes',data:getVals('fraudes',YEARS),backgroundColor:'rgba(155,89,182,.6)',borderColor:'#9b59b6',borderWidth:1},
+  ]},options:chartOpts('Infractions')});
+
+  mkChart('chart-mesfaits',{type:'line',data:{labels:YEARS,datasets:[
+    {label:'Méfaits',data:getVals('mesfaits',YEARS),borderColor:'#e67e22',borderWidth:2,tension:.3,pointRadius:3},
+    {label:'Vols simples',data:getVals('vols_simples',YEARS),borderColor:'#2ecc71',borderWidth:2,tension:.3,pointRadius:3},
+    {label:'Alarmes fondées',data:getVals('alarmes_fondees',YEARS),borderColor:'#f39c12',borderWidth:2,tension:.3,pointRadius:3},
+  ]},options:chartOpts('Infractions')});
+
+  document.getElementById('table-propriete').innerHTML=buildTableHTML([
+    'crimes_propriete_total','introductions_effraction','vols_vehicules',
+    'vols_dans_vehicules','vols_simples','mesfaits','fraudes','alarmes_fondees'
+  ]);
+}
+
+// ════════════════════════════════════════════════════════════════════════
+//  ARMES À FEU
+// ════════════════════════════════════════════════════════════════════════
+function buildArmes() {
+  buildKPIs('kpi-armes',[
+    {key:'crimes_armes_feu',label:'Infractions avec armes à feu',inv:true},
+    {key:'saisies_armes_feu',label:"Saisies d'armes à feu",inv:false},
+    {key:'incidents_armes_feu',label:'Incidents impliquant armes',inv:true},
+    {key:'homicides_armes_feu',label:'Homicides par armes à feu',inv:true},
+  ],'2024','2023');
+
+  mkChart('chart-armes1',{type:'bar',data:{labels:YEARS,datasets:[
+    {label:'Incidents armes à feu',data:getVals('incidents_armes_feu',YEARS),backgroundColor:'rgba(192,57,43,.6)',borderColor:'#c0392b',borderWidth:1,yAxisID:'y'},
+    {label:'Infractions armes à feu',type:'line',data:getVals('crimes_armes_feu',YEARS),borderColor:'#9b59b6',backgroundColor:'transparent',borderWidth:2,tension:.3,pointRadius:4,yAxisID:'y'},
+  ]},options:chartOpts('Nb')});
+
+  const saisVals=getVals('saisies_armes_feu',YEARS);
+  const saisMax=Math.max(...saisVals);
+  mkChart('chart-saisies',{type:'bar',data:{labels:YEARS,datasets:[
+    {label:"Saisies d'armes à feu",data:saisVals,
+      backgroundColor:saisVals.map(v=>`rgba(46,134,193,${.3+.7*v/saisMax})`),
+      borderColor:'#2e86c1',borderWidth:1},
+  ]},options:chartOpts('Saisies')});
+
+  mkChart('chart-armes-cross',{type:'line',data:{labels:YEARS,datasets:[
+    {label:'Homicides par armes à feu',data:getVals('homicides_armes_feu',YEARS),borderColor:'#e74c3c',backgroundColor:'rgba(231,76,60,.1)',borderWidth:2,tension:.3,fill:true,pointRadius:4},
+    {label:'Incidents armes à feu',data:getVals('incidents_armes_feu',YEARS),borderColor:'#f39c12',borderWidth:2,tension:.3,pointRadius:4},
+    {label:'Infractions armes (×1)',data:getVals('crimes_armes_feu',YEARS),borderColor:'#9b59b6',borderWidth:2,tension:.3,pointRadius:3},
+    {label:'Saisies (÷10)',data:getVals('saisies_armes_feu',YEARS).map(v=>+(v/10).toFixed(1)),borderColor:'#2ecc71',borderWidth:2,tension:.3,borderDash:[5,3],pointRadius:3},
+  ]},options:chartOpts('Indicateurs')});
+}
+
+// ════════════════════════════════════════════════════════════════════════
+//  OPÉRATIONS
+// ════════════════════════════════════════════════════════════════════════
+function buildOperations() {
+  buildKPIs('kpi-operations',[
+    {key:'appels_911_total',label:'Appels 911 total',inv:false},
+    {key:'appels_repartis_spvm',label:'Appels répartis SPVM',inv:true},
+    {key:'temps_reponse_priorite1',label:'Temps réponse P1 (sec)',inv:true},
+    {key:'effectif_policiers',label:'Effectif policiers',inv:false},
+    {key:'effectif_civil',label:'Effectif civil',inv:false},
+    {key:'arrestations_code_criminel',label:'Arrestations adultes CC',inv:false},
+    {key:'arrestations_mineurs',label:'Arrestations mineurs',inv:false},
+    {key:'alarmes_fondees',label:'Alarmes fondées',inv:true},
+  ],'2024','2023');
+
+  mkChart('chart-911',{type:'line',data:{labels:YEARS,datasets:[
+    {label:'Appels 911',data:getVals('appels_911_total',YEARS),borderColor:'#2e86c1',backgroundColor:'rgba(46,134,193,.1)',borderWidth:2,tension:.3,fill:true,pointRadius:3,yAxisID:'y'},
+    {label:'Appels répartis SPVM',data:getVals('appels_repartis_spvm',YEARS),borderColor:'#f39c12',borderWidth:2,tension:.3,pointRadius:3,yAxisID:'y2'},
+  ]},options:{...chartOpts(),...{scales:{
+    y:{position:'left',grid:{color:'#30363d'},title:{display:true,text:'Appels 911',color:'#8b949e'}},
+    y2:{position:'right',grid:{display:false},title:{display:true,text:'Appels répartis',color:'#8b949e'}}}}}});
+
+  mkChart('chart-reponse',{type:'line',data:{labels:YEARS,datasets:[
+    {label:'Temps réponse Priorité 1 (sec)',data:getVals('temps_reponse_priorite1',YEARS),
+      borderColor:'#e74c3c',backgroundColor:'rgba(231,76,60,.1)',borderWidth:2,tension:.3,fill:true,pointRadius:4},
+  ]},options:{...chartOpts('Secondes'),...{plugins:{tooltip:{callbacks:{label:ctx=>{
+    const s=ctx.raw, m=Math.floor(s/60), sec=s%60;
+    return `${ctx.dataset.label}: ${m}m${String(sec).padStart(2,'0')}s`;
+  }}}}}}});
+
+  mkChart('chart-effectif',{type:'bar',data:{labels:YEARS,datasets:[
+    {label:'Policiers',data:getVals('effectif_policiers',YEARS),backgroundColor:'rgba(46,134,193,.7)',borderColor:'#2e86c1',borderWidth:1},
+    {label:'Civil',data:getVals('effectif_civil',YEARS),backgroundColor:'rgba(46,204,113,.6)',borderColor:'#2ecc71',borderWidth:1},
+  ]},options:chartOpts('Postes comblés')});
+
+  mkChart('chart-arrestations',{type:'bar',data:{labels:YEARS,datasets:[
+    {label:'Adultes',data:getVals('arrestations_code_criminel',YEARS),backgroundColor:'rgba(231,76,60,.6)',borderColor:'#e74c3c',borderWidth:1},
+    {label:'Mineurs',data:getVals('arrestations_mineurs',YEARS),backgroundColor:'rgba(243,156,18,.6)',borderColor:'#f39c12',borderWidth:1},
+  ]},options:chartOpts('Arrestations')});
+
+  document.getElementById('table-operations').innerHTML=buildTableHTML([
+    'appels_911_total','appels_repartis_spvm','temps_reponse_priorite1',
+    'effectif_policiers','effectif_civil','arrestations_code_criminel',
+    'arrestations_mineurs','alarmes_fondees'
+  ]);
+}
+
+// ════════════════════════════════════════════════════════════════════════
+//  SÉCURITÉ ROUTIÈRE
+// ════════════════════════════════════════════════════════════════════════
+function buildRoutier() {
+  buildKPIs('kpi-routier',[
+    {key:'collisions_total',label:'Collisions totales',inv:true},
+    {key:'collisions_mortelles',label:'Collisions mortelles',inv:true},
+    {key:'decedes_route',label:'Décès sur la route',inv:true},
+    {key:'blesses_graves_route',label:'Blessés graves',inv:true},
+    {key:'infractions_routieres',label:'Infractions routières',inv:false},
+  ],'2024','2023');
+
+  mkChart('chart-collisions',{type:'line',data:{labels:YEARS,datasets:[
+    {label:'Collisions totales',data:getVals('collisions_total',YEARS),borderColor:'#3498db',backgroundColor:'rgba(52,152,219,.1)',borderWidth:2,tension:.3,fill:true,pointRadius:3,yAxisID:'y'},
+    {label:'Collisions mortelles (×100)',data:getVals('collisions_mortelles',YEARS).map(v=>v*100),borderColor:'#e74c3c',borderWidth:2,tension:.3,pointRadius:4,yAxisID:'y'},
+  ]},options:chartOpts('Collisions')});
+
+  mkChart('chart-decedes',{type:'bar',data:{labels:YEARS,datasets:[
+    {label:'Décès',data:getVals('decedes_route',YEARS),backgroundColor:'rgba(192,57,43,.7)',borderColor:'#c0392b',borderWidth:1},
+    {label:'Blessés graves',data:getVals('blesses_graves_route',YEARS),backgroundColor:'rgba(230,126,34,.6)',borderColor:'#e67e22',borderWidth:1},
+  ]},options:chartOpts('Personnes')});
+
+  mkChart('chart-infractions-route',{type:'bar',data:{labels:YEARS,datasets:[
+    {label:'Infractions Code sécurité routière',data:getVals('infractions_routieres',YEARS),
+      backgroundColor:'rgba(46,134,193,.5)',borderColor:'#2e86c1',borderWidth:1},
+  ]},options:chartOpts('Infractions')});
+}
+
+// ════════════════════════════════════════════════════════════════════════
+//  PROJECTIONS
+// ════════════════════════════════════════════════════════════════════════
+function buildProjections() {
+  const allYears=[...YEARS,'2025','2026','2027'];
+
+  function projDataset(key) {
+    const obs=getVals(key,YEARS);
+    const [p25,p26,p27]=projectLinear(obs,3);
+    return {obs, trend:[p25,p26,p27],
+      pess:[Math.round(p25*1.12),Math.round(p26*1.14),Math.round(p27*1.16)],
+      opt:[Math.round(p25*.90),Math.round(p26*.88),Math.round(p27*.86)]};
+  }
+
+  const cp=projDataset('crimes_personne_total');
+  mkChart('chart-proj-personne',{type:'line',data:{labels:allYears,datasets:[
+    {label:'Crimes personne (observé)',data:[...cp.obs,null,null,null],borderColor:'#e74c3c',borderWidth:2,tension:.3,pointRadius:3,fill:false},
+    {label:'Tendanciel',data:[...YEARS.map(()=>null),...cp.trend],borderColor:'#f39c12',borderWidth:2,tension:.3,borderDash:[6,3],pointRadius:4,fill:false},
+    {label:'Pessimiste (+12–16%)',data:[...YEARS.map(()=>null),...cp.pess],borderColor:'rgba(192,57,43,.5)',borderWidth:1,borderDash:[3,3],pointRadius:2,fill:false},
+    {label:'Optimiste (−10–14%)',data:[...YEARS.map(()=>null),...cp.opt],borderColor:'rgba(46,204,113,.5)',borderWidth:1,borderDash:[3,3],pointRadius:2,fill:false},
+  ]},options:chartOpts('Infractions')});
+
+  const prop=projDataset('crimes_propriete_total');
+  mkChart('chart-proj-propriete',{type:'line',data:{labels:allYears,datasets:[
+    {label:'Crimes propriété (observé)',data:[...prop.obs,null,null,null],borderColor:'#f39c12',borderWidth:2,tension:.3,pointRadius:3,fill:false},
+    {label:'Tendanciel',data:[...YEARS.map(()=>null),...prop.trend],borderColor:'#e67e22',borderWidth:2,tension:.3,borderDash:[6,3],pointRadius:4,fill:false},
+    {label:'Pessimiste',data:[...YEARS.map(()=>null),...prop.pess],borderColor:'rgba(192,57,43,.5)',borderWidth:1,borderDash:[3,3],pointRadius:2,fill:false},
+    {label:'Optimiste',data:[...YEARS.map(()=>null),...prop.opt],borderColor:'rgba(46,204,113,.5)',borderWidth:1,borderDash:[3,3],pointRadius:2,fill:false},
+  ]},options:chartOpts('Infractions')});
+
+  // Table
+  const pKeys=[
+    {key:'crimes_personne_total',label:'Crimes personne'},
+    {key:'voies_de_fait',label:'Voies de fait'},
+    {key:'agressions_sexuelles',label:'Agressions sexuelles'},
+    {key:'vols_qualifies',label:'Vols qualifiés'},
+    {key:'crimes_propriete_total',label:'Crimes propriété'},
+    {key:'introductions_effraction',label:'Introductions effraction'},
+    {key:'vols_vehicules',label:'Vols véhicules'},
+    {key:'vols_dans_vehicules',label:'Vols dans véhicules'},
+    {key:'crimes_armes_feu',label:'Infractions armes à feu'},
+    {key:'crimes_haineux',label:'Crimes haineux'},
+  ];
+  let html=`<thead><tr><th>Indicateur</th><th>2024 (réel)</th><th>2025 Pess.</th><th>2025 Tendanciel</th><th>2025 Opt.</th><th>2026 Tendanciel</th><th>2027 Tendanciel</th><th>Confiance proj.</th></tr></thead><tbody>`;
+  for (const {key,label} of pKeys) {
+    const obs=getVals(key,YEARS);
+    const [p25,p26,p27]=projectLinear(obs,3);
+    const slope=trendSlope(obs);
+    const conf=Math.abs(slope)/obs[obs.length-1]>0.03?'med':'high';
+    html+=`<tr>
+      <td>${label}</td>
+      <td><strong>${fmt(obs[9])}</strong></td>
+      <td style="color:var(--spvm-red)">${fmt(Math.round(p25*1.12))}</td>
+      <td>${fmt(p25)}</td>
+      <td style="color:var(--spvm-green)">${fmt(Math.round(p25*.90))}</td>
+      <td>${fmt(p26)}</td>
+      <td>${fmt(p27)}</td>
+      <td><span class="proj-badge ${conf}">${conf==='high'?'Élevée':'Modérée'}</span></td>
+    </tr>`;
+  }
+  html+='</tbody>';
+  document.getElementById('table-projections').innerHTML=html;
+}
+
+// ════════════════════════════════════════════════════════════════════════
+//  ANALYSE PROFONDE
+// ════════════════════════════════════════════════════════════════════════
+function buildAnalyse() {
+
+  // ── Données calculées pour chaque constat ────────────────────
+  const eff15=getV('effectif_policiers','2015'), eff24=getV('effectif_policiers','2024');
+  const cp15=getV('crimes_personne_total','2015'), cp24=getV('crimes_personne_total','2024');
+  const vv19=getV('vols_vehicules','2019'), vv24=getV('vols_vehicules','2024');
+  const vdv19=getV('vols_dans_vehicules','2019'), vdv24=getV('vols_dans_vehicules','2024');
+  const arm15=getV('incidents_armes_feu','2015'), arm24=getV('incidents_armes_feu','2024');
+  const saisies24=getV('saisies_armes_feu','2024');
+  const tr15=getV('temps_reponse_priorite1','2015'), tr24=getV('temps_reponse_priorite1','2024');
+  const app15=getV('appels_repartis_spvm','2015'), app24=getV('appels_repartis_spvm','2024');
+  const vc15=getV('violence_conjugale_appels','2015'), vc24=getV('violence_conjugale_appels','2024');
+  const coll15=getV('collisions_total','2015'), coll24=getV('collisions_total','2024');
+  const dec15=getV('deces_route','2015'), dec24=getV('deces_route','2024');
+  const effDiff=eff24-eff15;
+
+  // ── 6 constats en langage clair ─────────────────────────────
+  const constats=[
+    {
+      icon:'👮', sev:'rouge',
+      title:'Moins de policiers, plus de crimes contre la personne',
+      finding:`Le SPVM a <strong>perdu ${Math.abs(effDiff).toLocaleString('fr-CA')} postes de policiers</strong> en 10 ans (${((effDiff/eff15)*100).toFixed(1)}%), pendant que les crimes contre la personne augmentaient de <strong>+${((cp24-cp15)/cp15*100).toFixed(0)}%</strong>. Ces deux tendances évoluent en miroir sur toute la décennie.`,
+      detail:`Policiers : ${fmt(eff15)} (2015) → ${fmt(eff24)} (2024)  ·  Crimes personne : ${fmt(cp15)} → ${fmt(cp24)}`,
+      note:`Lien statistique très fort (r = −0.98), mais la baisse des effectifs n'est pas la seule cause possible. D'autres facteurs socio-économiques contribuent. Corrélation ≠ Causalité.`
+    },
+    {
+      icon:'🚗', sev:'rouge',
+      title:'Explosion des vols liés aux véhicules depuis la pandémie',
+      finding:`Depuis 2019, les vols de véhicules ont bondi de <strong>+${((vv24-vv19)/vv19*100).toFixed(0)}%</strong> et les vols <em>dans</em> les véhicules de <strong>+${((vdv24-vdv19)/vdv19*100).toFixed(0)}%</strong>. Ce rebond post-pandémique est l'une des hausses les plus marquées de la décennie.`,
+      detail:`Vols véhicules : ${fmt(vv19)} (2019) → ${fmt(vv24)} (2024)  ·  Vols dans véhicules : ${fmt(vdv19)} → ${fmt(vdv24)}`,
+      note:`Ces deux types de vol évoluent ensemble — ils sont probablement liés aux mêmes opportunités criminelles ou au même contexte socio-économique.`
+    },
+    {
+      icon:'🔫', sev:'vert',
+      title:'Bonne nouvelle : moins d\'incidents liés aux armes à feu',
+      finding:`Les incidents impliquant des armes à feu ont chuté de <strong>${((arm24-arm15)/arm15*100).toFixed(0)}%</strong> depuis 2015. C'est l'une des tendances les plus positives de la décennie, avec ${fmt(saisies24)} armes saisies en 2024.`,
+      detail:`Incidents armes à feu : ${fmt(arm15)} (2015) → ${fmt(arm24)} (2024)  ·  Saisies 2024 : ${fmt(saisies24)}`,
+      note:`Malgré cette réduction globale, une légère hausse des homicides par arme à feu est observable depuis 2022. La vigilance reste nécessaire.`
+    },
+    {
+      icon:'🚨', sev:'orange',
+      title:'Le délai de réponse aux urgences s\'allonge',
+      finding:`Le temps pour répondre aux appels d'urgence priorité 1 a augmenté de <strong>+${((tr24-tr15)/tr15*100).toFixed(0)}%</strong> en 10 ans. Avec <strong>${fmt(app24)} appels</strong> répartis en 2024 (vs ${fmt(app15)} en 2015), les patrouilleurs sont sollicités au maximum.`,
+      detail:`Temps réponse P1 : ${fmt(tr15)} sec (2015) → ${fmt(tr24)} sec (2024)  ·  Appels : ${fmt(app15)} → ${fmt(app24)}`,
+      note:`Corrélation très forte entre volume d'appels et délai de réponse (r = 0.94). Plus de demandes + moins d'effectifs = délais qui s'allongent.`
+    },
+    {
+      icon:'💜', sev:'orange',
+      title:'La violence conjugale est au cœur de la hausse des crimes',
+      finding:`Les appels pour violence conjugale ont augmenté de <strong>+${((vc24-vc15)/vc15*100).toFixed(0)}%</strong> depuis 2015. Leur courbe suit presque parfaitement celle des voies de fait — la violence conjugale est devenue une composante structurelle et croissante des crimes contre la personne.`,
+      detail:`Violence conjugale (appels) : ${fmt(vc15)} (2015) → ${fmt(vc24)} (2024)`,
+      note:`Corrélation voies de fait / violence conjugale : r = 0.97. Ce lien très fort révèle que la violence conjugale représente une part significative des voies de fait enregistrées.`
+    },
+    {
+      icon:'🛣️', sev:'vert',
+      title:'Sécurité routière : une décennie de progrès à protéger',
+      finding:`Les collisions totales ont diminué de <strong>${((coll24-coll15)/coll15*100).toFixed(0)}%</strong> et les décès sur la route de <strong>${((dec24-dec15)/dec15*100).toFixed(0)}%</strong> depuis 2015. Un résultat positif qui témoigne de l'efficacité des efforts de prévention.`,
+      detail:`Collisions : ${fmt(coll15)} (2015) → ${fmt(coll24)} (2024)  ·  Décès route : ${fmt(dec15)} → ${fmt(dec24)}`,
+      note:`Une légère remontée est observable depuis 2022 — les acquis de la décennie restent fragiles et demandent un maintien soutenu des interventions.`
+    }
+  ];
+
+  document.getElementById('constats-grid').innerHTML=constats.map(c=>`
+    <div class="signal ${c.sev}" style="padding:16px 18px;margin-bottom:10px;gap:14px;align-items:flex-start">
+      <div class="constat-icon">${c.icon}</div>
+      <div style="flex:1">
+        <div class="constat-title">${c.title}</div>
+        <div class="constat-finding">${c.finding}</div>
+        <div class="constat-detail">${c.detail}</div>
+        <div class="constat-note">⚠ ${c.note}</div>
+      </div>
+    </div>
+  `).join('');
+
+  // ── Bilan décennie ───────────────────────────────────────────
+  const trends=Object.entries(DS).filter(([k])=>k!=='meta').map(([key,m])=>{
+    const vals=YEARS.map(y=>m.data[y]||0);
+    const pctChg=vals[0]?((vals[9]-vals[0])/vals[0]*100):0;
+    return {label:m.label, pctChg, v0:vals[0], v9:vals[9]};
+  }).sort((a,b)=>Math.abs(b.pctChg)-Math.abs(a.pctChg));
+
+  document.getElementById('aggrave-list').innerHTML=
+    trends.filter(t=>t.pctChg>10).slice(0,7).map(t=>`
+    <div class="bilan-item">
+      <span style="font-size:1.1rem">🔺</span>
+      <div style="flex:1">
+        <div style="font-size:.78rem;font-weight:600;color:var(--text-main)">${t.label}</div>
+        <div style="font-size:.71rem">
+          <span style="color:var(--spvm-red);font-weight:700">+${t.pctChg.toFixed(0)}%</span>
+          <span style="color:var(--text-muted)"> sur 10 ans · ${fmt(t.v0)} → ${fmt(t.v9)}</span>
+        </div>
+      </div>
+    </div>`).join('');
+
+  document.getElementById('ameliore-list').innerHTML=
+    trends.filter(t=>t.pctChg<-10).slice(0,7).map(t=>`
+    <div class="bilan-item">
+      <span style="font-size:1.1rem">🔻</span>
+      <div style="flex:1">
+        <div style="font-size:.78rem;font-weight:600;color:var(--text-main)">${t.label}</div>
+        <div style="font-size:.71rem">
+          <span style="color:var(--spvm-green);font-weight:700">${t.pctChg.toFixed(0)}%</span>
+          <span style="color:var(--text-muted)"> sur 10 ans · ${fmt(t.v0)} → ${fmt(t.v9)}</span>
+        </div>
+      </div>
+    </div>`).join('');
+
+  // ── Graphique COVID ──────────────────────────────────────────
+  const covidYears=['2018','2019','2020','2021','2022','2023','2024'];
+  const b100=(k,y)=>+(getV(k,y)/getV(k,'2019')*100).toFixed(1);
+  mkChart('chart-covid',{type:'line',data:{labels:covidYears,datasets:[
+    {label:'Total Code criminel',data:covidYears.map(y=>b100('total_code_criminel',y)),borderColor:'#2e86c1',borderWidth:2,tension:.3,pointRadius:5,fill:false},
+    {label:'Crimes contre la personne',data:covidYears.map(y=>b100('crimes_personne_total',y)),borderColor:'#e74c3c',borderWidth:2,tension:.3,pointRadius:5,fill:false},
+    {label:'Crimes contre la propriété',data:covidYears.map(y=>b100('crimes_propriete_total',y)),borderColor:'#f39c12',borderWidth:2,tension:.3,pointRadius:5,fill:false},
+    {label:'Vols de véhicules',data:covidYears.map(y=>b100('vols_vehicules',y)),borderColor:'#9b59b6',borderWidth:2,tension:.3,pointRadius:5,fill:false},
+  ]},options:Object.assign(chartOpts('Indice — 100 = niveau de 2019'),{plugins:{
+    legend:{labels:{boxWidth:9,usePointStyle:true,padding:10}},
+    tooltip:{backgroundColor:'#1c2333',titleColor:'#e6edf3',bodyColor:'#8b949e',borderColor:'#30363d',borderWidth:1,
+      callbacks:{label:ctx=>{
+        const v=ctx.raw;
+        return `${ctx.dataset.label} : ${v} (${v>100?'+':''}${(v-100).toFixed(1)}% vs 2019)`;
+      }}}
+  }})});
+}
+
+// ════════════════════════════════════════════════════════════════════════
+//  AI PANEL
+// ════════════════════════════════════════════════════════════════════════
+function toggleAI() {
+  aiOpen=!aiOpen;
+  document.getElementById('aiPanel').classList.toggle('collapsed',!aiOpen);
+  document.getElementById('aiChevron').style.transform=aiOpen?'rotate(180deg)':'rotate(0deg)';
+}
+function quickAsk(q) { document.getElementById('ai-input').value=q; sendAI(); }
+
+async function sendAI() {
+  const inp=document.getElementById('ai-input');
+  const q=inp.value.trim(); if(!q) return;
+  inp.value='';
+  const msgs=document.getElementById('ai-messages');
+  msgs.innerHTML+=`<div class="msg user">${escHtml(q)}</div>`;
+  const tid='think-'+Date.now();
+  msgs.innerHTML+=`<div class="msg ai" id="${tid}"><span class="spinner"></span> Analyse en cours…</div>`;
+  msgs.scrollTop=msgs.scrollHeight;
+  try {
+    const res=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:q, mode:currentAILayer})});
+    const data=await res.json();
+    const el=document.getElementById(tid);
+    if (el) el.innerHTML=md(data.response||data.error||'Erreur serveur');
+  } catch(e) {
+    const el=document.getElementById(tid);
+    if (el) el.innerHTML=`<span style="color:var(--spvm-red)"><strong>Erreur de connexion</strong><br>${e.message}<br><br>Assurez-vous que le serveur Flask (app.py) est démarré sur le port 5200.</span>`;
+  }
+  msgs.scrollTop=msgs.scrollHeight;
+}
+
+document.getElementById('ai-input')?.addEventListener('keydown',e=>{
+  if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendAI();}
+});
+
+function escHtml(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function md(t){
+  return t
+    .replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>')
+    .replace(/^### (.+)$/gm,'<h4>$1</h4>')
+    .replace(/^## (.+)$/gm,'<h3>$1</h3>')
+    .replace(/^# (.+)$/gm,'<h3>$1</h3>')
+    .replace(/^[-•] (.+)$/gm,'<li>$1</li>')
+    .replace(/(<li>.*?<\/li>[\n]?)+/gs,m=>`<ul>${m}</ul>`)
+    .replace(/\n\n/g,'<br><br>').replace(/\n/g,'<br>');
+}
+
+// ════════════════════════════════════════════════════════════════════════
+//  AI LAYER SELECTOR
+// ════════════════════════════════════════════════════════════════════════
+let currentAILayer = 'standard';
+function setAILayer(btn) {
+  document.querySelectorAll('.layer-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  currentAILayer = btn.dataset.mode;
+}
+
+// ════════════════════════════════════════════════════════════════════════
+//  ARRONDISSEMENTS + MAP
+// ════════════════════════════════════════════════════════════════════════
+let ARROND_DATA = null;
+let leafletMap = null;
+let mapLayers = [];
+
+async function loadArrondissements() {
+  try {
+    const res = await fetch('/api/arrondissements');
+    const data = await res.json();
+    ARROND_DATA = data.arrondissements;
+    renderOSINTCards();
+    computeCorrelations();
+  } catch(e) {
+    console.warn('Arrondissements non disponibles:', e);
+  }
+}
+
+function getArrondValue(arrond, yearFilter, catFilter) {
+  if (!arrond) return 0;
+  if (catFilter !== 'all') {
+    if (yearFilter !== 'all') {
+      return arrond.crimes_by_year_category[`${yearFilter}_${catFilter}`] || 0;
+    }
+    return arrond.crimes_by_category[catFilter] || 0;
+  }
+  if (yearFilter !== 'all') {
+    return arrond.crimes_by_year[yearFilter] || 0;
+  }
+  return arrond.total || 0;
+}
+
+function renderMap() {
+  if (!ARROND_DATA) return;
+  const yearFilter = document.getElementById('map-year-filter')?.value || 'all';
+  const catFilter = document.getElementById('map-cat-filter')?.value || 'all';
+  const viewMode = document.getElementById('map-view-mode')?.value || 'absolute';
+
+  // Init map once
+  if (!leafletMap) {
+    leafletMap = L.map('map-container', { zoomControl: true }).setView([45.53, -73.65], 11);
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+      attribution: '© OSM © CARTO',
+      maxZoom: 18
+    }).addTo(leafletMap);
+  }
+
+  // Clear old layers
+  mapLayers.forEach(l => leafletMap.removeLayer(l));
+  mapLayers = [];
+
+  // Build values
+  const values = {};
+  for (const [name, arrond] of Object.entries(ARROND_DATA)) {
+    if (!arrond.centroid) continue;
+    let v = getArrondValue(arrond, yearFilter, catFilter);
+    if (viewMode === 'per_capita') {
+      const pop = arrond.osint?.population;
+      v = pop ? Math.round(v / pop * 1000 * 10) / 10 : v;
+    }
+    values[name] = v;
+  }
+
+  const maxVal = Math.max(...Object.values(values));
+  const colors = ['#27ae60','#f39c12','#e67e22','#e74c3c','#8e44ad'];
+
+  function getColor(v) {
+    const pct = maxVal > 0 ? v / maxVal : 0;
+    if (pct < 0.2) return colors[0];
+    if (pct < 0.4) return colors[1];
+    if (pct < 0.6) return colors[2];
+    if (pct < 0.8) return colors[3];
+    return colors[4];
+  }
+
+  for (const [name, arrond] of Object.entries(ARROND_DATA)) {
+    if (!arrond.centroid) continue;
+    const v = values[name] || 0;
+    const pct = maxVal > 0 ? v / maxVal : 0;
+    const radius = 800 + pct * 3500;
+    const color = getColor(v);
+    const pop = arrond.osint?.population;
+    const rate = pop ? (arrond.total / 5 / pop * 1000).toFixed(1) : '—';
+    const topCat = Object.entries(arrond.crimes_by_category || {}).sort((a,b) => b[1]-a[1])[0];
+    const years = Object.entries(arrond.crimes_by_year || {}).sort((a,b) => a[0].localeCompare(b[0])).map(([y,n]) => `${y}: ${n.toLocaleString()}`).join(' | ');
+
+    const circle = L.circle(arrond.centroid, {
+      radius,
+      color,
+      fillColor: color,
+      fillOpacity: 0.55,
+      weight: 1.5,
+    });
+
+    const popup = `<div class="map-popup-title">${name}</div>
+      <div class="map-popup-row"><span>Crimes (filtre actif)</span><strong>${v.toLocaleString()}${viewMode==='per_capita'?' /1000h':''}</strong></div>
+      <div class="map-popup-row"><span>Total 5 ans</span><strong>${arrond.total.toLocaleString()}</strong></div>
+      <div class="map-popup-row"><span>Taux / 1000 hab / an</span><strong>${rate}</strong></div>
+      <div class="map-popup-row"><span>Population</span><strong>${pop?.toLocaleString() || '—'}</strong></div>
+      <div class="map-popup-row"><span>Top crime</span><strong>${topCat ? topCat[0] : '—'}</strong></div>
+      <div class="map-popup-row"><span>Revenu médian</span><strong>${arrond.osint?.revenu_median?.toLocaleString() || '—'}$</strong></div>
+      <div class="map-popup-row"><span>Chômage</span><strong>${arrond.osint?.taux_chomage || '—'}%</strong></div>
+      <hr style="margin:6px 0;border-color:#30363d">
+      <div style="font-size:0.65rem;color:#8b949e">${years}</div>`;
+
+    circle.bindPopup(popup);
+    circle.addTo(leafletMap);
+    mapLayers.push(circle);
+  }
+
+  // Legend
+  const legend = document.getElementById('map-legend');
+  if (legend) {
+    const labels = ['Faible', 'Moyen-faible', 'Moyen', 'Élevé', 'Très élevé'];
+    legend.innerHTML = labels.map((l,i) =>
+      `<div class="legend-item"><div class="legend-dot" style="background:${colors[i]}"></div>${l}</div>`
+    ).join('') + `<span style="margin-left:auto;color:#8b949e;font-size:0.65rem">Source: MTL Open Data 2020–2024</span>`;
+  }
+
+  // Table
+  renderArrondTable(values, viewMode, yearFilter);
+}
+
+function renderArrondTable(values, viewMode, yearFilter) {
+  const tbody = document.getElementById('arrond-table-body');
+  if (!tbody) return;
+  const sorted = Object.entries(ARROND_DATA).filter(([,a]) => a.total > 0)
+    .sort((a,b) => (values[b[0]]||0) - (values[a[0]]||0));
+  const maxV = Math.max(...Object.values(values));
+
+  tbody.innerHTML = sorted.map(([name, arrond], i) => {
+    const v = values[name] || 0;
+    const pop = arrond.osint?.population;
+    const annuelle = (arrond.total / 5).toFixed(0);
+    const rate = pop ? (arrond.total / 5 / pop * 1000).toFixed(1) : '—';
+    const topCat = Object.entries(arrond.crimes_by_category || {}).sort((a,b) => b[1]-a[1])[0];
+    const v2020 = arrond.crimes_by_year?.['2020'] || 0;
+    const v2024 = arrond.crimes_by_year?.['2024'] || 0;
+    const evol = v2020 > 0 ? ((v2024 - v2020) / v2020 * 100).toFixed(1) : '—';
+    const pct = maxV > 0 ? v / maxV * 100 : 0;
+    const cho = arrond.osint?.taux_chomage || 0;
+    const riskClass = cho > 10 ? 'risk-high' : cho > 7 ? 'risk-medium' : 'risk-low';
+    const riskLabel = cho > 10 ? '● Élevé' : cho > 7 ? '● Moyen' : '● Faible';
+    const evolColor = evol !== '—' && parseFloat(evol) > 0 ? 'var(--spvm-red)' : 'var(--spvm-green)';
+    return `<tr>
+      <td style="color:var(--text-muted)">${i+1}</td>
+      <td><strong>${name}</strong></td>
+      <td>${arrond.total.toLocaleString()}</td>
+      <td>${parseInt(annuelle).toLocaleString()}</td>
+      <td>${rate}</td>
+      <td style="font-size:0.7rem">${topCat ? topCat[0] : '—'}</td>
+      <td style="color:${evolColor}">${evol !== '—' ? (parseFloat(evol) > 0 ? '+' : '') + evol + '%' : '—'}</td>
+      <td><span class="risk-badge ${riskClass}">${riskLabel}</span></td>
+    </tr>`;
+  }).join('');
+}
+
+function renderOSINTCards() {
+  const container = document.getElementById('osint-cards-container');
+  if (!container || !ARROND_DATA) return;
+  const sorted = Object.entries(ARROND_DATA).filter(([,a]) => a.osint?.population)
+    .sort((a,b) => {
+      const rateA = a[1].total / 5 / a[1].osint.population * 1000;
+      const rateB = b[1].total / 5 / b[1].osint.population * 1000;
+      return rateB - rateA;
+    });
+
+  container.innerHTML = sorted.map(([name, arrond]) => {
+    const o = arrond.osint;
+    const rate = (arrond.total / 5 / o.population * 1000).toFixed(1);
+    const cho = o.taux_chomage || 0;
+    const riskClass = cho > 10 ? 'risk-high' : cho > 7 ? 'risk-medium' : 'risk-low';
+    const years = Object.entries(arrond.crimes_by_year || {}).sort((a,b) => a[0]-b[0]);
+    const sparkMax = Math.max(...years.map(([,v])=>v));
+    const sparkBars = years.map(([y,v]) => {
+      const h = Math.round(v / sparkMax * 40);
+      return `<div style="width:8px;height:${h}px;background:var(--spvm-light);border-radius:2px 2px 0 0" title="${y}: ${v}"></div>`;
+    }).join('');
+    const facteurs = o.facteurs_risque?.length ? o.facteurs_risque.slice(0,3).join(', ') : '—';
+    return `<div class="col-md-6 col-lg-4">
+      <div class="card" style="height:100%">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px">
+          <div>
+            <div style="font-weight:700;font-size:.85rem">${name}</div>
+            <div style="font-size:.65rem;color:var(--text-muted)">PDQs: ${arrond.pdqs?.join(', ')}</div>
+          </div>
+          <span class="risk-badge ${riskClass}">chôm. ${cho}%</span>
+        </div>
+        <div class="row g-2 mb-2">
+          <div class="col-6"><div class="kpi-card" style="padding:8px">
+            <div class="kpi-label">Crimes /1000 hab/an</div>
+            <div class="kpi-value" style="font-size:1.2rem">${rate}</div>
+          </div></div>
+          <div class="col-6"><div class="kpi-card" style="padding:8px">
+            <div class="kpi-label">Revenu médian</div>
+            <div class="kpi-value" style="font-size:1.2rem">${o.revenu_median?.toLocaleString() || '—'}$</div>
+          </div></div>
+        </div>
+        <div style="font-size:0.7rem;color:var(--text-muted);margin-bottom:6px">
+          <strong>Pop:</strong> ${o.population?.toLocaleString()} · <strong>Densité:</strong> ${o.densite}/km² · <strong>Locataires:</strong> ${o.logements_locataires}%
+        </div>
+        <div style="font-size:0.7rem;margin-bottom:6px;color:var(--text-main)">${o.notes || ''}</div>
+        ${facteurs !== '—' ? `<div style="font-size:0.65rem;color:var(--spvm-red)">⚠ ${facteurs}</div>` : ''}
+        <div style="display:flex;align-items:flex-end;gap:3px;margin-top:10px;height:44px">${sparkBars}</div>
+        <div style="display:flex;justify-content:space-between;font-size:0.6rem;color:var(--text-muted)"><span>${years[0]?.[0]||''}</span><span>→</span><span>${years[years.length-1]?.[0]||''}</span></div>
+        <div style="font-size:0.6rem;color:var(--text-muted);margin-top:4px">Source: ${o.sources}</div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function computeCorrelations() {
+  if (!ARROND_DATA) return;
+  const pts = Object.values(ARROND_DATA).filter(a => a.osint?.population && a.osint?.revenu_median);
+  if (pts.length < 3) return;
+
+  const rates = pts.map(a => a.total / 5 / a.osint.population * 1000);
+  const revs = pts.map(a => a.osint.revenu_median);
+  const choms = pts.map(a => a.osint.taux_chomage);
+  const denses = pts.map(a => a.osint.densite);
+
+  function pearson(x, y) {
+    const n = x.length;
+    const mx = x.reduce((a,b)=>a+b,0)/n;
+    const my = y.reduce((a,b)=>a+b,0)/n;
+    const num = x.reduce((s,xi,i) => s + (xi-mx)*(y[i]-my), 0);
+    const den = Math.sqrt(x.reduce((s,xi) => s+(xi-mx)**2, 0) * y.reduce((s,yi) => s+(yi-my)**2, 0));
+    return den ? (num/den).toFixed(2) : '—';
+  }
+
+  const corrR = pearson(rates, revs);
+  const corrC = pearson(rates, choms);
+  const corrD = pearson(rates, denses);
+
+  const elR = document.getElementById('corr-revenu');
+  const elC = document.getElementById('corr-chomage');
+  const elD = document.getElementById('corr-densite');
+  if (elR) { elR.textContent = `r = ${corrR}`; elR.className = `corr-coef ${parseFloat(corrR)<0?'corr-negative':'corr-positive'}`; }
+  if (elC) { elC.textContent = `r = ${corrC}`; elC.className = `corr-coef ${parseFloat(corrC)>0?'corr-positive':'corr-negative'}`; }
+  if (elD) { elD.textContent = `r = ${corrD}`; elD.className = `corr-coef corr-neutral`; }
+
+  document.querySelector('#tab-osint p span')?.replaceWith(pts.length + '');
+}
+
+// ════════════════════════════════════════════════════════════════════════
+//  INIT
+// ════════════════════════════════════════════════════════════════════════
+loadData();
+loadArrondissements().then(() => {
+  // Render map when tab becomes active
+  document.querySelectorAll('.main-nav button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tabId = btn.getAttribute('onclick')?.match(/'([^']+)'/)?.[1];
+      if (tabId === 'carte' && ARROND_DATA) {
+        setTimeout(renderMap, 150);
+      }
+    });
+  });
+});
+</script>
+</body>
+</html>
